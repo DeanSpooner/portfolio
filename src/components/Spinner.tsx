@@ -12,7 +12,7 @@ const Spinner = () => {
 
 export default Spinner;
 
-const MoveUpDown = keyframes`
+const spinnerCycle = keyframes`
     0% {
       rotate: 0;
     }
@@ -22,8 +22,9 @@ const MoveUpDown = keyframes`
   `;
 
 const SpinnerContainer = styled.div`
-  width: 510px;
-  height: 510px;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -38,7 +39,7 @@ const SharedSpinnerStyles = styled.div`
   border: 5px white dashed;
   border-radius: 50%;
   position: absolute;
-  animation: ${MoveUpDown} 120s linear infinite;
+  animation: ${spinnerCycle} 120s linear infinite;
 `;
 
 const InnerSpinner = styled(SharedSpinnerStyles)`
@@ -54,14 +55,14 @@ const MiddleSpinner = styled(SharedSpinnerStyles)`
   height: 400px;
   opacity: 4%;
   animation-direction: reverse;
-  bottom: -50px;
-  right: -50px;
+  bottom: -60px;
+  right: -60px;
 `;
 
 const OuterSpinner = styled(SharedSpinnerStyles)`
   width: 500px;
   height: 500px;
   opacity: 6%;
-  bottom: -100px;
-  right: -100px;
+  bottom: -110px;
+  right: -110px;
 `;

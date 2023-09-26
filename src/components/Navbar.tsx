@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import "./Navbar.css";
+import HamburgerIcon from "../assets/hamburger.svg";
+import CloseIcon from "../assets/close.svg";
+import { useState } from "react";
 
 const Bar = styled.div`
   background-color: rgba(100, 100, 100, 30%);
@@ -7,6 +11,37 @@ const Bar = styled.div`
   display: flex;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
+  z-index: 2;
+  @media screen and (max-width: 1084px) {
+    flex-direction: column;
+    height: 100vh;
+    background: rgb(1, 25, 22);
+    background: linear-gradient(
+      180deg,
+      rgba(1, 25, 22, 1) 0%,
+      rgba(1, 59, 50, 1) 72%
+    );
+  }
+`;
+
+const Hamburger = styled.div`
+  background-color: #e97624;
+  border-radius: 12px;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @media screen and (min-width: 1085px) {
+    display: none;
+  }
 `;
 
 const LinkBox = styled.div<{ isScreen: boolean }>`
@@ -19,6 +54,9 @@ const LinkBox = styled.div<{ isScreen: boolean }>`
   &:hover {
     background-color: #0b7767;
     cursor: pointer;
+  }
+  @media screen and (max-width: 1084px) {
+    border-radius: 20px;
   }
 `;
 
@@ -38,33 +76,64 @@ interface NavbarProps {
 }
 
 const Navbar = ({ screen, setScreen }: NavbarProps) => {
+  let isClicked = false;
+
+  const [hamburgerIcon, setHamburgerIcon] = useState(true);
+
   return (
-    <Bar>
-      <LinkBox onClick={() => setScreen("home")} isScreen={screen === "home"}>
-        <Link>Home</Link>
-      </LinkBox>
-      <LinkBox onClick={() => setScreen("about")} isScreen={screen === "about"}>
-        <Link>About Dean</Link>
-      </LinkBox>
-      <LinkBox
-        onClick={() => setScreen("professional")}
-        isScreen={screen === "professional"}
+    <>
+      <Hamburger
+        onClick={() => {
+          document?.querySelector(".menu")?.classList.toggle("isClicked");
+
+          setHamburgerIcon(!hamburgerIcon);
+
+          isClicked =
+            document?.querySelector(".menu")?.classList.contains("isClicked") ??
+            false;
+
+          document
+            ?.querySelector(".menu")
+            ?.classList?.toggle("isNotClicked", !isClicked);
+        }}
       >
-        <Link>Professional Experience</Link>
-      </LinkBox>
-      <LinkBox
-        onClick={() => setScreen("personal")}
-        isScreen={screen === "personal"}
-      >
-        <Link>Personal Projects</Link>
-      </LinkBox>
-      <LinkBox
-        onClick={() => setScreen("education")}
-        isScreen={screen === "education"}
-      >
-        <Link>Education</Link>
-      </LinkBox>
-    </Bar>
+        <img src={hamburgerIcon ? HamburgerIcon : CloseIcon} />
+      </Hamburger>
+      <div className={`menu`}>
+        <Bar>
+          <LinkBox
+            onClick={() => setScreen("home")}
+            isScreen={screen === "home"}
+          >
+            <Link>Home</Link>
+          </LinkBox>
+          <LinkBox
+            onClick={() => setScreen("about")}
+            isScreen={screen === "about"}
+          >
+            <Link>About Dean</Link>
+          </LinkBox>
+          <LinkBox
+            onClick={() => setScreen("professional")}
+            isScreen={screen === "professional"}
+          >
+            <Link>Professional Experience</Link>
+          </LinkBox>
+          <LinkBox
+            onClick={() => setScreen("personal")}
+            isScreen={screen === "personal"}
+          >
+            <Link>Personal Projects</Link>
+          </LinkBox>
+          <LinkBox
+            onClick={() => setScreen("education")}
+            isScreen={screen === "education"}
+          >
+            <Link>Education</Link>
+          </LinkBox>
+        </Bar>
+      </div>
+    </>
   );
 };
 
