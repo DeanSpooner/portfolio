@@ -45,6 +45,8 @@ const Hamburger = styled.div`
 `;
 
 const LinkBox = styled.div<{ isScreen: boolean }>`
+  transition: all 0.5s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
   display: flex;
   align-items: center;
   height: 50px;

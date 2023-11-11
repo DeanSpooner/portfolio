@@ -11,7 +11,7 @@
     rgba(1, 25, 22, 1) 0%,
     rgba(1, 59, 50, 1) 72%,
     rgba(159, 65, 0, 1) 100%
-  );
+  ) fixed;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
