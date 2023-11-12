@@ -19,7 +19,7 @@ function App() {
     padding: 0;
     @media screen and (max-width: 1084px) {
       position: absolute;
-      top: 0;
+      top: 39px;
       left: 0;
     }
     z-index: ${menuDown ? -1 : 0};
