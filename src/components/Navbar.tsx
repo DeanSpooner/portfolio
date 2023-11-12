@@ -62,8 +62,15 @@ const LinkBox = styled.div<{ isScreen: boolean }>`
   }
 `;
 
+
 const Link = styled.h2`
   margin: 0;
+`;
+
+const InvisibleLink = styled.div`
+  @media screen and (min-width: 1085px) {
+    display: none;
+  }
 `;
 
 interface NavbarProps {
@@ -137,6 +144,9 @@ const Navbar = ({ screen, setScreen, menuDown, setMenuDown }: NavbarProps) => {
           >
             <Link>Education</Link>
           </LinkBox>
+          <InvisibleLink />
+          <InvisibleLink />
+          <InvisibleLink />
         </Bar>
       </div>
     </>
