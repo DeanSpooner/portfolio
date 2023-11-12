@@ -27,8 +27,8 @@ const Bar = styled.div`
 const Hamburger = styled.div`
   background-color: #e97624;
   border-radius: 12px;
-  width: 50px;
-  height: 50px;
+  width: 36px;
+  height: 36px;
   padding: 10px;
   position: absolute;
   top: 20px;

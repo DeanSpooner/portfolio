@@ -35,10 +35,11 @@ const About = () => {
         <Text>
           My name is Dean Spooner and I am a web and app developer. Currently I
           am part of a small dev team building a large app for an education
-          company in the UK; previously I have been a mid-level frontend
-          developer for a multinational digital agency for a year. Prior to
-          this, I trained on a software development bootcamp, while working in
-          my previous career as a primary school teacher.
+          company in the UK; previously I was a mid-level frontend developer for
+          a multinational digital agency, building various web projects for
+          large international clients. Prior to this, I trained on a software
+          development bootcamp, while working in my previous career as a primary
+          school teacher.
           <br />
           <br />
           Outside of work, I enjoy studying Japanese, travelling around Japan,
