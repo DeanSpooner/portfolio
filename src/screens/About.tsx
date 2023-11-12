@@ -18,8 +18,20 @@ const About = () => {
   return (
     <div>
       <Header text={"About"} />
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "space-evenly",
+          }}
+        >
           <AboutImage
             className="fadein prague"
             src={prague}

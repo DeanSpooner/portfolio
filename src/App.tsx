@@ -11,6 +11,7 @@ import styled from "styled-components";
 
 function App() {
   const [screen, setScreen] = useState("home");
+  const [menuDown, setMenuDown] = useState(false);
 
   const ScreenContainer = styled.div`
     min-width: 100vw;
@@ -21,12 +22,17 @@ function App() {
       top: 0;
       left: 0;
     }
-    z-index: -1;
+    z-index: ${menuDown ? -1 : 0};
   `;
 
   return (
     <>
-      <Navbar screen={screen} setScreen={setScreen} />
+      <Navbar
+        screen={screen}
+        setScreen={setScreen}
+        menuDown={menuDown}
+        setMenuDown={setMenuDown}
+      />
       <ScreenContainer>
         {screen === "home" ? <Home /> : null}
         {screen === "about" ? <About /> : null}

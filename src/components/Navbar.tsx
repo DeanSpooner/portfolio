@@ -2,7 +2,7 @@ import styled from "styled-components";
 import "./Navbar.css";
 import HamburgerIcon from "../assets/hamburger.svg";
 import CloseIcon from "../assets/close.svg";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 const Bar = styled.div`
   background-color: rgba(100, 100, 100, 30%);
@@ -75,9 +75,11 @@ interface NavbarProps {
    * setState function for which screen to show.
    */
   setScreen: (screen: string) => void;
+  menuDown: boolean;
+  setMenuDown: Dispatch<SetStateAction<boolean>>;
 }
 
-const Navbar = ({ screen, setScreen }: NavbarProps) => {
+const Navbar = ({ screen, setScreen, menuDown, setMenuDown }: NavbarProps) => {
   let isClicked = false;
 
   const [hamburgerIcon, setHamburgerIcon] = useState(true);
@@ -89,6 +91,8 @@ const Navbar = ({ screen, setScreen }: NavbarProps) => {
           document?.querySelector(".menu")?.classList.toggle("isClicked");
 
           setHamburgerIcon(!hamburgerIcon);
+
+          setMenuDown(!menuDown);
 
           isClicked =
             document?.querySelector(".menu")?.classList.contains("isClicked") ??
