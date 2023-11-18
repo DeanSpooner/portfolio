@@ -139,10 +139,10 @@ const Navbar = ({ screen, setScreen, menuDown, setMenuDown }: NavbarProps) => {
             <Link>Personal Projects</Link>
           </LinkBox>
           <LinkBox
-            onClick={() => setScreen("education")}
-            isScreen={screen === "education"}
+            onClick={() => setScreen("contact")}
+            isScreen={screen === "contact"}
           >
-            <Link>Education</Link>
+            <Link>Contact</Link>
           </LinkBox>
           <InvisibleLink />
           <InvisibleLink />

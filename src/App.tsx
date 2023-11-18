@@ -5,7 +5,7 @@ import Home from "./screens/Home";
 import About from "./screens/About";
 import Professional from "./screens/Professional";
 import Personal from "./screens/Personal";
-import Education from "./screens/Education";
+import Contact from "./screens/Contact";
 import Spinner from "./components/Spinner";
 import styled from "styled-components";
 
@@ -38,7 +38,7 @@ function App() {
         {screen === "about" ? <About /> : null}
         {screen === "professional" ? <Professional /> : null}
         {screen === "personal" ? <Personal /> : null}
-        {screen === "education" ? <Education /> : null}
+        {screen === "contact" ? <Contact /> : null}
       </ScreenContainer>
       <Spinner />
     </>
