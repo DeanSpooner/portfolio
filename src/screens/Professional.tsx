@@ -29,7 +29,7 @@ const Professional = () => {
           onClick={() => setPane(pane === "wre" ? "" : "wre")}
           isSelected={pane === "wre"}
         >
-          App Developer - White Rose Education{" "}
+          App Developer - White Rose Education
           <ChevronIcon src={Chevron} isSelected={pane === "wre"} />
         </TableHeader>
         {pane === "wre" && (
@@ -94,7 +94,6 @@ const Professional = () => {
         )}
       </TableSection>
       <TableSection>
-        {" "}
         <TableHeader
           onClick={() => setPane(pane === "dept" ? "" : "dept")}
           isSelected={pane === "dept"}
