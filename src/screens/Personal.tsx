@@ -88,7 +88,7 @@ const Personal = () => {
         </TableHeader>
         {pane === "ukana" && (
           <TableOuterContainer>
-            <TableText>Built July-September 2021</TableText>
+            <TableText>Built October-November 2021</TableText>
             <TableContainer>
               <TableTechStackContainer>
                 <TableText>Tech Stack:</TableText>
