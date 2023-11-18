@@ -20,7 +20,10 @@ const Professional = () => {
   return (
     <>
       <Header text={"Professional Experience"} />
-      <Text>Click a field to expand:</Text>
+      <Text>
+        Below are some of my most recent jobs in software development and
+        teaching. <br /> Please click a heading to expand its details:
+      </Text>
       <TableSection>
         <TableHeader
           onClick={() => setPane(pane === "wre" ? "" : "wre")}
