@@ -14,7 +14,7 @@ function App() {
   const [menuDown, setMenuDown] = useState(false);
 
   const ScreenContainer = styled.div`
-    min-width: 100vw;
+    max-width: 100vw;
     margin: 0;
     padding: 0;
     @media screen and (max-width: 1084px) {

@@ -71,7 +71,9 @@ const Professional = () => {
                       Infinity
                     </a>
                     , a new, large-scale educational app rolled out in schools
-                    throughout the United Kingdom in June 2024;
+                    throughout the United Kingdom in June 2024 - to date, we
+                    have achieved over a quarter of a million downloads, and
+                    over 15 million questions answered through Infinity;
                   </TableLi>
                   <TableLi>
                     Lead developer responsible for the deployment of the
