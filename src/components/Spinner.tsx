@@ -21,6 +21,24 @@ const spinnerCycle = keyframes`
     }
   `;
 
+const spinnerRotateA = keyframes`
+    0% { transform: rotate3d(1, 1, 1, 0deg); }
+    50% { transform: rotate3d(1, 1, 1, 180deg); }
+    100% { transform: rotate3d(1, 1, 1, 360deg); }
+  `;
+
+const spinnerRotateB = keyframes`
+    0% { transform: rotate3d(1, 1, 1, 360deg); }
+    50% { transform: rotate3d(1, 1, 1, 180deg); }
+    100% { transform: rotate3d(1, 1, 1, 0deg); }
+  `;
+
+const spinnerRotateC = keyframes`
+    0% { transform: rotate3d(1, 1, 1, 90deg); }
+    50% { transform: rotate3d(1, 1, 1, 270deg); }
+    100% { transform: rotate3d(1, 1, 1, 450deg); }
+  `;
+
 const SpinnerContainer = styled.div`
   z-index: -1;
   width: 100vw;
@@ -39,7 +57,8 @@ const SharedSpinnerStyles = styled.div`
   border: 5px white dashed;
   border-radius: 50%;
   position: absolute;
-  animation: ${spinnerCycle} 120s linear infinite;
+  animation: ${spinnerCycle} 120s linear infinite,
+    ${spinnerRotateA} 10s linear infinite;
 `;
 
 const InnerSpinner = styled(SharedSpinnerStyles)`
@@ -48,6 +67,7 @@ const InnerSpinner = styled(SharedSpinnerStyles)`
   opacity: 2%;
   bottom: -10px;
   right: -10px;
+  animation: ${spinnerRotateA} 10s linear infinite;
 `;
 
 const MiddleSpinner = styled(SharedSpinnerStyles)`
@@ -57,6 +77,7 @@ const MiddleSpinner = styled(SharedSpinnerStyles)`
   animation-direction: reverse;
   bottom: -60px;
   right: -60px;
+  animation: ${spinnerRotateB} 10s linear infinite;
 `;
 
 const OuterSpinner = styled(SharedSpinnerStyles)`
@@ -65,4 +86,5 @@ const OuterSpinner = styled(SharedSpinnerStyles)`
   opacity: 6%;
   bottom: -110px;
   right: -110px;
+  animation: ${spinnerRotateC} 10s linear infinite;
 `;
