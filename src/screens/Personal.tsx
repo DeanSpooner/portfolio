@@ -16,7 +16,7 @@ import Text from "../components/Text";
 import Chevron from "../assets/chevron.svg";
 
 const Personal = () => {
-  const [pane, setPane] = useState("");
+  const [pane, setPane] = useState<string>("");
   return (
     <>
       <Header text={"Personal Projects"} />
@@ -24,6 +24,57 @@ const Personal = () => {
         Below is a selection of some personal projects from my GitHub
         repositories. <br /> Please click a heading to expand its details:
       </Text>
+      <TableSection>
+        <TableHeader
+          onClick={() => setPane(pane === "metro-joho" ? "" : "metro-joho")}
+          isSelected={pane === "metro-joho"}
+        >
+          Tokyo Metro Information - Full Stack
+          <ChevronIcon src={Chevron} isSelected={pane === "metro-joho"} />
+        </TableHeader>
+        {pane === "metro-joho" && (
+          <TableOuterContainer>
+            <TableText>Currently being built (June 2025 - Present)</TableText>
+            <TableContainer>
+              <TableTechStackContainer>
+                <TableText>Tech Stack:</TableText>
+                <TableUl>
+                  <TableLi>HTML;</TableLi>
+                  <TableLi>TypeScript;</TableLi>
+                  <TableLi>React;</TableLi>
+                  <TableLi>Next.js;</TableLi>
+                  <TableLi>Tailwind;</TableLi>
+                  <TableLi>External APIs.</TableLi>
+                </TableUl>
+              </TableTechStackContainer>
+              <TableRoleContainer>
+                <TableText>Description:</TableText>
+                <TableUl>
+                  <TableLi>
+                    Using data provided by the{" "}
+                    <a target="_blank" href="https://www.odpt.org/">
+                      Public Transportation Open Data Center
+                      公共交通オープンデータセンター
+                    </a>
+                    , this project aims to provide information about every line
+                    and every station on the Tokyo Metro, including timetables
+                    and routes;
+                  </TableLi>
+                  <TableLi>
+                    <a
+                      href="https://github.com/DeanSpooner/metro-joho"
+                      target="_blank"
+                    >
+                      GitHub repo available here
+                    </a>
+                    .
+                  </TableLi>
+                </TableUl>
+              </TableRoleContainer>
+            </TableContainer>
+          </TableOuterContainer>
+        )}
+      </TableSection>
       <TableSection>
         <TableHeader
           onClick={() => setPane(pane === "pokedex" ? "" : "pokedex")}
