@@ -29,7 +29,7 @@ const Professional = () => {
           onClick={() => setPane(pane === "wre" ? "" : "wre")}
           isSelected={pane === "wre"}
         >
-          App Developer - White Rose Education
+          App and Frontend Web Developer - White Rose Education
           <ChevronIcon src={Chevron} isSelected={pane === "wre"} />
         </TableHeader>
         {pane === "wre" && (
@@ -40,12 +40,18 @@ const Professional = () => {
                 <TableText>Tech Stack:</TableText>
                 <TableUl>
                   <TableLi>TypeScript;</TableLi>
-                  <TableLi>React Native Expo;</TableLi>
+                  <TableLi>React;</TableLi>
+                  <TableLi>React Native;</TableLi>
+                  <TableLi>Next;</TableLi>
+                  <TableLi>Expo;</TableLi>
                   <TableLi>Zustand;</TableLi>
                   <TableLi>i18n Internationalization;</TableLi>
                   <TableLi>Jest;</TableLi>
+                  <TableLi>Cypress;</TableLi>
+                  <TableLi>Storybook;</TableLi>
                   <TableLi>Python;</TableLi>
                   <TableLi>iOS XCode;</TableLi>
+                  <TableLi>Android Studio;</TableLi>
                   <TableLi>Android Studio;</TableLi>
                   <TableLi>Bitbucket.</TableLi>
                 </TableUl>
@@ -57,9 +63,20 @@ const Professional = () => {
                     Collaborating with other developers and architects, both app
                     and web-based, as well as business leaders, product owners,
                     educational specialists, UI/UX designers, and external
-                    design agencies, to build a new, large-scale educational app
-                    to be rolled out in schools throughout the United Kingdom in
-                    late 2024;
+                    design agencies, to build and maintain{" "}
+                    <a
+                      target="_blank"
+                      href="https://whiteroseeducation.com/latest-news/research-behind-white-rose-infinity"
+                    >
+                      Infinity
+                    </a>
+                    , a new, large-scale educational app rolled out in schools
+                    throughout the United Kingdom in June 2024;
+                  </TableLi>
+                  <TableLi>
+                    Lead developer responsible for the deployment of the
+                    Infinity app through our testing and production release
+                    pipelines, via Expo, Apple and Google Play Stores;
                   </TableLi>
                   <TableLi>
                     Creating new components to enhance school pupils'
@@ -69,6 +86,11 @@ const Professional = () => {
                     Using TypeScript and Zustand to create new mathematical
                     question generators, adhering to strict mathematical
                     boundaries and conditions;
+                  </TableLi>
+                  <TableLi>
+                    Creation of new teacher-based features, such as quiz and
+                    class statistics, on the website, using Next, Chart.js,
+                    Storybook, Jest and Cypress;
                   </TableLi>
                   <TableLi>
                     Creation of Python scripts to automate repetitive tasks and
@@ -84,8 +106,8 @@ const Professional = () => {
                     work in paired-programming sessions.
                   </TableLi>
                   <TableLi>
-                    Participate in meetings, standups, company-wide
-                    presentations and technical demonstrations.
+                    Participation in and leading meetings, standups,
+                    company-wide presentations and technical demonstrations.
                   </TableLi>
                 </TableUl>
               </TableRoleContainer>
