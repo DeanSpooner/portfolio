@@ -2,8 +2,13 @@ import styled from "styled-components";
 
 const TableSection = styled.div``;
 
-const TableOuterContainer = styled.div`
+const TableOuterContainer = styled.div<{ isOpen: boolean }>`
   background: rgba(64, 64, 64, 0.5);
+  overflow: hidden;
+  max-height: ${props => (props.isOpen ? "2000px" : "0")};
+  opacity: ${props => (props.isOpen ? 1 : 0)};
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  padding: ${props => (props.isOpen ? "16px" : "0 16px")};
 `;
 
 const TableContainer = styled.div`
@@ -36,7 +41,7 @@ const TableHeader = styled.h2<{ isSelected: boolean }>`
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 700;
   cursor: pointer;
-  background: ${(props) =>
+  background: ${props =>
     props.isSelected ? "rgba(64, 64, 64, 0.5)" : "rgba(0, 0, 0, 0.5)"};
   margin: 0;
 `;
@@ -71,8 +76,7 @@ const TableLi = styled.li`
 const ChevronIcon = styled.img<{ isSelected: boolean }>`
   transition: all 0.5s ease 0s;
   -webkit-transition: all 0.5s ease 0s;
-  transform: ${(props) =>
-    props.isSelected ? "rotate(90deg)" : "rotate(0deg)"};
+  transform: ${props => (props.isSelected ? "rotate(90deg)" : "rotate(0deg)")};
 `;
 
 export {
