@@ -118,6 +118,7 @@ const Professional = () => {
         <TableHeader
           onClick={() => setPane(pane === "dept" ? "" : "dept")}
           isSelected={pane === "dept"}
+          evenRow
         >
           Frontend Developer - DEPT UK
           <ChevronIcon src={Chevron} isSelected={pane === "dept"} />
@@ -231,7 +232,7 @@ const Professional = () => {
         <TableHeader
           onClick={() => setPane(pane === "teaching" ? "" : "teaching")}
           isSelected={pane === "teaching"}
-          style={{ paddingBottom: "16px" }}
+          evenRow
         >
           Various Teaching Positions - UK
           <ChevronIcon src={Chevron} isSelected={pane === "teaching"} />

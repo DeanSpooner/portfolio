@@ -28,6 +28,7 @@ const Personal = () => {
         <TableHeader
           onClick={() => setPane(pane === "metro-joho" ? "" : "metro-joho")}
           isSelected={pane === "metro-joho"}
+          evenRow
         >
           Tokyo Metro Information - Full Stack
           <ChevronIcon src={Chevron} isSelected={pane === "metro-joho"} />
@@ -129,6 +130,7 @@ const Personal = () => {
         <TableHeader
           onClick={() => setPane(pane === "ukana" ? "" : "ukana")}
           isSelected={pane === "ukana"}
+          evenRow
         >
           Ukana Japanese Language Learning App - Full Stack
           <ChevronIcon src={Chevron} isSelected={pane === "ukana"} />
@@ -245,6 +247,7 @@ const Personal = () => {
         <TableHeader
           onClick={() => setPane(pane === "surreal" ? "" : "surreal")}
           isSelected={pane === "surreal"}
+          evenRow
         >
           Surreal Estate Properties - Frontend
           <ChevronIcon src={Chevron} isSelected={pane === "surreal"} />
@@ -343,6 +346,7 @@ const Personal = () => {
         <TableHeader
           onClick={() => setPane(pane === "weather" ? "" : "weather")}
           isSelected={pane === "weather"}
+          evenRow
         >
           UK Weather Forecast App - Frontend
           <ChevronIcon src={Chevron} isSelected={pane === "weather"} />
@@ -436,6 +440,7 @@ const Personal = () => {
         <TableHeader
           onClick={() => setPane(pane === "music" ? "" : "music")}
           isSelected={pane === "music"}
+          evenRow
         >
           Music Library - Backend
           <ChevronIcon src={Chevron} isSelected={pane === "music"} />
@@ -481,7 +486,6 @@ const Personal = () => {
         <TableHeader
           onClick={() => setPane(pane === "tozai" ? "" : "tozai")}
           isSelected={pane === "tozai"}
-          style={{ paddingBottom: "16px" }}
         >
           Tokyo Metro Tozai Simulator - Frontend
           <ChevronIcon src={Chevron} isSelected={pane === "tozai"} />

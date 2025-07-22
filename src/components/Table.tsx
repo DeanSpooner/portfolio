@@ -31,8 +31,8 @@ const TableRoleContainer = styled.div`
   flex-grow: 1;
 `;
 
-const TableHeader = styled.h2<{ isSelected: boolean }>`
-  padding-top: 16px;
+const TableHeader = styled.h2<{ isSelected: boolean; evenRow?: boolean }>`
+  padding: 16px 0;
   display: flex;
   align-content: center;
   align-items: center;
@@ -42,7 +42,11 @@ const TableHeader = styled.h2<{ isSelected: boolean }>`
   font-weight: 700;
   cursor: pointer;
   background: ${props =>
-    props.isSelected ? "rgba(64, 64, 64, 0.5)" : "rgba(0, 0, 0, 0.5)"};
+    props.isSelected
+      ? "rgba(64, 64, 64, 0.5)"
+      : props.evenRow
+      ? "rgba(0, 0, 0, 0.25)"
+      : "rgba(0, 0, 0, 0.5)"};
   margin: 0;
 `;
 
