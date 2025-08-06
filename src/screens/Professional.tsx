@@ -65,7 +65,7 @@ const Professional = () => {
                   agencies, to build and maintain{" "}
                   <a
                     target="_blank"
-                    href="https://whiteroseeducation.com/latest-news/research-behind-white-rose-infinity"
+                    href="https://whiteroseeducation.com/infinity"
                   >
                     Infinity
                   </a>
