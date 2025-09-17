@@ -1,5 +1,5 @@
-import { useState } from "react";
-import Header from "../components/Header";
+import { useState } from 'react';
+import Header from '../components/Header';
 import {
   ChevronIcon,
   TableContainer,
@@ -11,34 +11,40 @@ import {
   TableTechStackContainer,
   TableText,
   TableUl,
-} from "../components/Table";
-import Text from "../components/Text";
-import Chevron from "../assets/chevron.svg";
+} from '../components/Table';
+import Text from '../components/Text';
+import Chevron from '../assets/chevron.svg';
 
 const Professional = () => {
-  const [pane, setPane] = useState("");
+  const [pane, setPane] = useState('');
   return (
     <>
-      <Header text={"Professional Experience"} />
+      <Header text={'Professional Experience'} />
       <Text>
         Below are some of my most recent jobs in software development and
         teaching. <br /> Please click a heading to expand its details:
       </Text>
       <TableSection>
         <TableHeader
-          onClick={() => setPane(pane === "wre" ? "" : "wre")}
-          isSelected={pane === "wre"}
+          onClick={() => setPane(pane === 'wre' ? '' : 'wre')}
+          isSelected={pane === 'wre'}
         >
-          App and Frontend Web Developer - White Rose Education
-          <ChevronIcon src={Chevron} isSelected={pane === "wre"} />
+          Senior App and Frontend Web Developer - White Rose Education
+          <ChevronIcon src={Chevron} isSelected={pane === 'wre'} />
         </TableHeader>
-        <TableOuterContainer isOpen={pane === "wre"}>
-          <TableText>November 2022 - Present</TableText>
+        <TableOuterContainer isOpen={pane === 'wre'}>
+          <TableText>
+            November 2022 - Present
+            <br />
+            (Midーlevel - November 2022 - August 2025, Senior - September 2025 -
+            present)
+          </TableText>
           <TableContainer>
             <TableTechStackContainer>
               <TableText>Tech Stack:</TableText>
               <TableUl>
                 <TableLi>TypeScript;</TableLi>
+                <TableLi>Python;</TableLi>
                 <TableLi>React;</TableLi>
                 <TableLi>React Native;</TableLi>
                 <TableLi>Next;</TableLi>
@@ -48,10 +54,9 @@ const Professional = () => {
                 <TableLi>Jest;</TableLi>
                 <TableLi>Cypress;</TableLi>
                 <TableLi>Storybook;</TableLi>
-                <TableLi>Python;</TableLi>
                 <TableLi>iOS XCode;</TableLi>
                 <TableLi>Android Studio;</TableLi>
-                <TableLi>Android Studio;</TableLi>
+                <TableLi>AWS (S3 and CloudFront);</TableLi>
                 <TableLi>Bitbucket.</TableLi>
               </TableUl>
             </TableTechStackContainer>
@@ -59,25 +64,28 @@ const Professional = () => {
               <TableText>Job role and duties:</TableText>
               <TableUl>
                 <TableLi>
-                  Collaborating with other developers and architects, both app
-                  and web-based, as well as business leaders, product owners,
-                  educational specialists, UI/UX designers, and external design
-                  agencies, to build and maintain{" "}
+                  Lead developer on
                   <a
-                    target="_blank"
-                    href="https://whiteroseeducation.com/infinity"
+                    target='_blank'
+                    href='https://whiteroseeducation.com/infinity'
                   >
                     Infinity
                   </a>
                   , a new, large-scale educational app rolled out in schools
                   throughout the United Kingdom in June 2024 - to date, we have
                   achieved over a quarter of a million downloads, and over 15
-                  million questions answered through Infinity;
+                  million questions answered through Infinity. I collaborate
+                  with other developers and architects, both app and web-based,
+                  as well as business leaders, product owners, educational
+                  specialists, UI/UX designers, and external design agencies, to
+                  build, enhance and maintain Infinity;
                 </TableLi>
                 <TableLi>
-                  Lead developer responsible for the deployment of the Infinity
-                  app through our testing and production release pipelines, via
-                  Expo, Apple and Google Play Stores;
+                  As the lead developer, I am responsible for the deployment of
+                  the Infinity app through our testing and production release
+                  pipelines, via Expo, Apple and Google Play Stores, as well as
+                  any and all necessary package and security updates to Expo,
+                  React, React Native, Next, and other associated packages;
                 </TableLi>
                 <TableLi>
                   Creating new components to enhance school pupils'
@@ -116,14 +124,14 @@ const Professional = () => {
       </TableSection>
       <TableSection>
         <TableHeader
-          onClick={() => setPane(pane === "dept" ? "" : "dept")}
-          isSelected={pane === "dept"}
+          onClick={() => setPane(pane === 'dept' ? '' : 'dept')}
+          isSelected={pane === 'dept'}
           evenRow
         >
           Frontend Developer - DEPT UK
-          <ChevronIcon src={Chevron} isSelected={pane === "dept"} />
+          <ChevronIcon src={Chevron} isSelected={pane === 'dept'} />
         </TableHeader>
-        <TableOuterContainer isOpen={pane === "dept"}>
+        <TableOuterContainer isOpen={pane === 'dept'}>
           <TableText>November 2021 - November 2022</TableText>
           <TableContainer>
             <TableTechStackContainer>
@@ -184,13 +192,13 @@ const Professional = () => {
       </TableSection>
       <TableSection>
         <TableHeader
-          onClick={() => setPane(pane === "tm" ? "" : "tm")}
-          isSelected={pane === "tm"}
+          onClick={() => setPane(pane === 'tm' ? '' : 'tm')}
+          isSelected={pane === 'tm'}
         >
           Foundation Software Developer - Thinkmoney
-          <ChevronIcon src={Chevron} isSelected={pane === "tm"} />
+          <ChevronIcon src={Chevron} isSelected={pane === 'tm'} />
         </TableHeader>
-        <TableOuterContainer isOpen={pane === "tm"}>
+        <TableOuterContainer isOpen={pane === 'tm'}>
           <TableText>September 2021 - November 2021</TableText>
           <TableContainer>
             <TableTechStackContainer>
@@ -230,14 +238,14 @@ const Professional = () => {
       </TableSection>
       <TableSection>
         <TableHeader
-          onClick={() => setPane(pane === "teaching" ? "" : "teaching")}
-          isSelected={pane === "teaching"}
+          onClick={() => setPane(pane === 'teaching' ? '' : 'teaching')}
+          isSelected={pane === 'teaching'}
           evenRow
         >
           Various Teaching Positions - UK
-          <ChevronIcon src={Chevron} isSelected={pane === "teaching"} />
+          <ChevronIcon src={Chevron} isSelected={pane === 'teaching'} />
         </TableHeader>
-        <TableOuterContainer isOpen={pane === "teaching"}>
+        <TableOuterContainer isOpen={pane === 'teaching'}>
           <TableText>September 2013 - August 2021</TableText>
           <TableContainer>
             <TableRoleContainer>
