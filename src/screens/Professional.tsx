@@ -64,7 +64,7 @@ const Professional = () => {
               <TableText>Job role and duties:</TableText>
               <TableUl>
                 <TableLi>
-                  Lead developer on
+                  Lead developer on{' '}
                   <a
                     target='_blank'
                     href='https://whiteroseeducation.com/infinity'
