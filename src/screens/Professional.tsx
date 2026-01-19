@@ -107,7 +107,7 @@ const ChevronIcon = styled.img<{ isOpen: boolean }>`
   transition: transform 0.3s ease;
   transform: ${({ isOpen }) => (isOpen ? "rotate(90deg)" : "rotate(0deg)")};
   filter: none;
-  opacity: 1; /* Unset opacity */
+  opacity: 1;
 `;
 
 const CardContent = styled.div<{ isOpen: boolean }>`
@@ -179,7 +179,7 @@ const Professional = () => {
       <ExperienceCard isOpen={openCard === "wre"}>
         <CardHeader onClick={() => toggleCard("wre")}>
           <HeaderContent>
-            <RoleTitle>App and Frontend Web Developer - White Rose Education</RoleTitle> {/* Kept user's edit */}
+            <RoleTitle>App and Frontend Web Developer - White Rose Education</RoleTitle>
             <HeaderDate>November 2022 - Present</HeaderDate>
           </HeaderContent>
           <ChevronIcon src={Chevron} isOpen={openCard === "wre"} />

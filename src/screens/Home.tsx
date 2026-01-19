@@ -3,7 +3,7 @@ import { theme } from "../theme";
 import shikoku from "../assets/images/shikoku.png";
 
 const HeroSection = styled.section`
-  min-height: calc(100vh - 80px); /* Subtract navbar height */
+  min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,10 +83,10 @@ const ProfileImage = styled.img`
   width: 400px;
   height: 400px;
   object-fit: cover;
-  border-radius: 50%; /* Simplified to circle */
+  border-radius: 50%;
   position: relative;
   z-index: 1;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Simpler shadow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   transition: all 0.5s ease;
   border: 4px solid rgba(255, 255, 255, 0.1);
 

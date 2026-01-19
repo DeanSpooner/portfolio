@@ -8,8 +8,8 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Changed from center to push content up slightly */
-  min-height: calc(100vh - 80px); /* 80px is navbar height */
+  justify-content: flex-start; 
+  min-height: calc(100vh - 80px);
   padding: ${theme.spacing.lg} ${theme.spacing.lg};
 `;
 
@@ -75,17 +75,17 @@ const Icon = styled.img`
   width: 80px;
   height: 80px;
   margin-bottom: ${theme.spacing.lg};
-  margin-top: ${theme.spacing.md}; /* Spacing from top */
+  margin-top: ${theme.spacing.md};
   transition: all 0.3s ease;
-  filter: invert(1); /* Invert black icons to white */
+  filter: invert(1);
   opacity: 0.9;
-  display: block; /* Ensure no extra inline space */
-  object-fit: contain; /* Ensure icon doesn't stretch */
+  display: block;
+  object-fit: contain;
 `;
 
 const Label = styled.p`
   color: ${theme.colors.text.primary};
-  font-size: 1.5rem; /* Increased size since it's now the main label */
+  font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
   text-align: center;

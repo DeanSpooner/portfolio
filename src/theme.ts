@@ -1,15 +1,15 @@
 export const theme = {
   colors: {
-    background: "#0a0a0a", // Very dark grey/black
-    surface: "#1a1a1a", // Slightly lighter for cards/sections
+    background: "#0a0a0a",
+    surface: "#1a1a1a",
     text: {
       primary: "#ffffff",
       secondary: "#a0a0a0",
-      accent: "#646cff", // Vitt purple/blue ish
+      accent: "#646cff",
     },
     primary: "#646cff",
     secondary: "#535bf2",
-    accent: "#ff0080", // Pop color
+    accent: "#ff0080",
     border: "rgba(255, 255, 255, 0.1)",
   },
   typography: {

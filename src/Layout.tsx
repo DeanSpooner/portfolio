@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import { useEffect } from "react";
 
 const MainContent = styled.main`
-  padding-top: 80px; /* Space for fixed navbar */
+  padding-top: 80px;
   min-height: 100vh;
   width: 100%;
   display: flex;

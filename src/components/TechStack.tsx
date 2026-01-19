@@ -20,7 +20,7 @@ const Tag = styled.span`
 
 interface TechStackProps {
   technologies: string[];
-  className?: string; // Allow overriding styles if needed
+  className?: string;
 }
 
 const TechStack = ({ technologies, className }: TechStackProps) => {
