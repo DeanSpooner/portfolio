@@ -8,7 +8,7 @@ const HeroSection = styled.section`
   align-items: center;
   justify-content: center;
   padding: ${theme.spacing.lg};
-  background: radial-gradient(circle at 50% 50%, #2a2a2a 0%, #0a0a0a 100%);
+
   overflow: hidden;
 
   @media (max-width: 768px) {

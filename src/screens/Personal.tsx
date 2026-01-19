@@ -55,13 +55,12 @@ const ProjectCard = styled.div`
   background-color: ${theme.colors.surface};
   border-radius: ${theme.borderRadius.lg};
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
   display: flex;
   flex-direction: column;
 
   &:hover {
-    transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     border-color: ${theme.colors.primary};
   }
@@ -69,7 +68,8 @@ const ProjectCard = styled.div`
 
 const CardHeader = styled.div`
   padding: ${theme.spacing.md};
-  background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+  background: var(--card-header-bg);
+  border-bottom: none;
 `;
 
 const ProjectTitle = styled.h3`

@@ -56,16 +56,16 @@ const ContactCard = styled.a`
   width: 280px;
   height: 280px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid transparent;
 
   &:hover {
     transform: translateY(-10px) scale(1.05);
-    background-color: #252525;
+    background-color: var(--card-hover-bg);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     border-color: ${theme.colors.primary};
     
     img {
-      filter: invert(1) drop-shadow(0 0 10px ${theme.colors.primary});
+      filter: var(--black-icon-filter) drop-shadow(0 0 10px ${theme.colors.primary});
       transform: scale(1.1);
     }
   }
@@ -77,7 +77,7 @@ const Icon = styled.img`
   margin-bottom: ${theme.spacing.lg};
   margin-top: ${theme.spacing.md};
   transition: all 0.3s ease;
-  filter: invert(1);
+  filter: var(--black-icon-filter);
   opacity: 0.9;
   display: block;
   object-fit: contain;

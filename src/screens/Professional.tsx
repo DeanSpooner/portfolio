@@ -50,7 +50,7 @@ const ExperienceCard = styled.div<{ isOpen: boolean }>`
   margin-bottom: ${theme.spacing.md};
   overflow: hidden;
   transition: all 0.3s ease;
-  border: 1px solid transparent;
+  border: 1px solid transparent; 
 
   ${({ isOpen }) =>
     isOpen &&
@@ -60,7 +60,7 @@ const ExperienceCard = styled.div<{ isOpen: boolean }>`
   `}
 
   &:hover {
-    transform: translateY(-2px);
+    border-color: ${theme.colors.primary};
   }
 `;
 
@@ -70,10 +70,12 @@ const CardHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: var(--card-header-bg);
+  border-bottom: none;
+  transition: all 0.3s ease;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--card-header-hover-bg);
   }
 `;
 
@@ -106,7 +108,7 @@ const ChevronIcon = styled.img<{ isOpen: boolean }>`
   height: 24px;
   transition: transform 0.3s ease;
   transform: ${({ isOpen }) => (isOpen ? "rotate(90deg)" : "rotate(0deg)")};
-  filter: none;
+  filter: var(--icon-filter);
   opacity: 1;
 `;
 

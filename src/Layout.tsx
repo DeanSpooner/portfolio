@@ -14,7 +14,12 @@ const MainContent = styled.main`
   z-index: 1;
 `;
 
-const Layout = () => {
+interface LayoutProps {
+  theme: "dark" | "light";
+  toggleTheme: () => void;
+}
+
+const Layout = ({ theme, toggleTheme }: LayoutProps) => {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -23,7 +28,7 @@ const Layout = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       <MainContent>
         <Outlet />
       </MainContent>

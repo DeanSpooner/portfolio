@@ -1,16 +1,16 @@
 export const theme = {
   colors: {
-    background: "#0a0a0a",
-    surface: "#1a1a1a",
+    background: "var(--bg-color)",
+    surface: "var(--surface-color)",
     text: {
-      primary: "#ffffff",
-      secondary: "#a0a0a0",
-      accent: "#646cff",
+      primary: "var(--text-primary)",
+      secondary: "var(--text-secondary)",
+      accent: "var(--text-accent)",
     },
-    primary: "#646cff",
-    secondary: "#535bf2",
-    accent: "#ff0080",
-    border: "rgba(255, 255, 255, 0.1)",
+    primary: "var(--primary-color)",
+    secondary: "var(--secondary-color)",
+    accent: "var(--accent-color)",
+    border: "var(--border-color)",
   },
   typography: {
     fontFamily: "'Inter', system-ui, -apple-system, sans-serif",

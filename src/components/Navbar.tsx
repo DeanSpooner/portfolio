@@ -11,7 +11,7 @@ const NavContainer = styled.nav`
   left: 0;
   width: 100%;
   height: 80px;
-  background-color: rgba(10, 10, 10, 0.9);
+  background-color: var(--nav-bg);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
@@ -31,7 +31,7 @@ const Logo = styled(NavLink)`
   
   span {
     color: ${theme.colors.primary};
-    transition: color 0.3s ease;
+    transition: ${theme.transitions.default};
   }
 
   &:hover {
@@ -66,7 +66,7 @@ const StyledNavLink = styled(NavLink)`
   color: ${theme.colors.text.primary};
   font-weight: 500;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: ${theme.transitions.default};
 
   @media (max-width: 768px) {
     font-size: 1.2rem;
@@ -103,11 +103,69 @@ const Hamburger = styled.button`
   img {
     width: 24px;
     height: 24px;
-    filter: invert(1);
+    filter: var(--black-icon-filter);
   }
 `;
 
-const Navbar = () => {
+const ThemeSwitch = styled.button`
+  background: ${theme.colors.surface};
+  border: 1px solid ${theme.colors.border};
+  border-radius: ${theme.borderRadius.full};
+  cursor: pointer;
+  width: 50px;
+  height: 26px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+
+  &:hover {
+    border-color: ${theme.colors.primary};
+  }
+`;
+
+const SwitchSlider = styled.div<{ theme?: "dark" | "light" }>`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 4px;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: ${theme.colors.primary};
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transform: ${({ theme }) => (theme === "light" ? "translateX(24px)" : "translateX(0)")};
+    z-index: 1;
+  }
+`;
+
+const IconWrapper = styled.span`
+  font-size: 12px;
+  z-index: 0;
+  user-select: none;
+  line-height: 1;
+`;
+
+interface NavbarProps {
+  theme?: "dark" | "light";
+  toggleTheme?: () => void;
+}
+
+const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -119,27 +177,38 @@ const Navbar = () => {
         Dean <span>Spooner</span>
       </Logo>
 
-      <Hamburger onClick={toggleMenu} aria-label="Toggle navigation">
-        <img src={isOpen ? CloseIcon : HamburgerIcon} alt="Menu" />
-      </Hamburger>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <NavLinks isOpen={isOpen}>
+          <StyledNavLink to="/" onClick={closeMenu}>
+            Home
+          </StyledNavLink>
+          <StyledNavLink to="/about" onClick={closeMenu}>
+            About
+          </StyledNavLink>
+          <StyledNavLink to="/professional" onClick={closeMenu}>
+            Experience
+          </StyledNavLink>
+          <StyledNavLink to="/personal" onClick={closeMenu}>
+            Projects
+          </StyledNavLink>
+          <StyledNavLink to="/contact" onClick={closeMenu}>
+            Contact
+          </StyledNavLink>
+        </NavLinks>
 
-      <NavLinks isOpen={isOpen}>
-        <StyledNavLink to="/" onClick={closeMenu}>
-          Home
-        </StyledNavLink>
-        <StyledNavLink to="/about" onClick={closeMenu}>
-          About
-        </StyledNavLink>
-        <StyledNavLink to="/professional" onClick={closeMenu}>
-          Experience
-        </StyledNavLink>
-        <StyledNavLink to="/personal" onClick={closeMenu}>
-          Projects
-        </StyledNavLink>
-        <StyledNavLink to="/contact" onClick={closeMenu}>
-          Contact
-        </StyledNavLink>
-      </NavLinks>
+        {toggleTheme && (
+          <ThemeSwitch onClick={toggleTheme} aria-label="Toggle theme">
+            <SwitchSlider theme={theme}>
+              <IconWrapper>☀️</IconWrapper>
+              <IconWrapper>🌙</IconWrapper>
+            </SwitchSlider>
+          </ThemeSwitch>
+        )}
+
+        <Hamburger onClick={toggleMenu} aria-label="Toggle navigation">
+          <img src={isOpen ? CloseIcon : HamburgerIcon} alt="Menu" />
+        </Hamburger>
+      </div>
     </NavContainer>
   );
 };

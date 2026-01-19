@@ -10,7 +10,7 @@ const Container = styled.div`
 
 const Tag = styled.span`
   display: inline-block;
-  background-color: rgba(100, 108, 255, 0.1);
+  background-color: var(--tag-bg);
   color: #ffffff;
   padding: 4px 12px;
   border-radius: ${theme.borderRadius.full};

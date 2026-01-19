@@ -74,7 +74,7 @@ const StyledImage = styled.img`
   border-radius: ${theme.borderRadius.md};
   transition: ${theme.transitions.default};
   opacity: 0.9;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
 
   &:hover {
     opacity: 1;
