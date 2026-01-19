@@ -1,155 +1,146 @@
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import "./Navbar.css";
+import { theme } from "../theme";
 import HamburgerIcon from "../assets/hamburger.svg";
 import CloseIcon from "../assets/close.svg";
-import { Dispatch, SetStateAction, useState } from "react";
 
-const Bar = styled.div`
-  background-color: rgba(100, 100, 100, 30%);
-  height: 50px;
-  justify-content: space-evenly;
+const NavContainer = styled.nav`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(10px);
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
-  z-index: 2;
-  @media screen and (max-width: 1084px) {
-    flex-direction: column;
-    height: 100vh;
-    background: rgb(1, 25, 22);
-    background: linear-gradient(
-      180deg,
-      rgba(1, 25, 22, 1) 0%,
-      rgba(1, 59, 50, 1) 72%
-    );
-  }
+  padding: 0 2rem;
+  z-index: 1000;
+  border-bottom: 1px solid ${theme.colors.border};
 `;
 
-const Hamburger = styled.div`
-  background-color: #e97624;
-  border-radius: 12px;
-  width: 36px;
-  height: 36px;
-  padding: 10px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 3;
-  cursor: pointer;
+const Logo = styled(NavLink)`
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: ${theme.colors.text.primary};
+  text-decoration: none;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  @media screen and (min-width: 1085px) {
-    display: none;
+  gap: 0.25rem;
+  
+  span {
+    color: ${theme.colors.primary};
+    transition: color 0.3s ease;
   }
-`;
 
-const LinkBox = styled.div<{ isScreen: boolean }>`
-  transition: all 0.5s ease 0s;
-  -webkit-transition: all 0.5s ease 0s;
-  display: flex;
-  align-items: center;
-  height: 50px;
-  padding: 0 20px;
-  background-color: ${(props) => (props.isScreen ? "#016556" : "transparent")};
-  border-radius: 0 0 20px 20px;
   &:hover {
-    background-color: #0b7767;
-    cursor: pointer;
-  }
-  @media screen and (max-width: 1084px) {
-    border-radius: 20px;
-  }
-`;
-
-
-const Link = styled.h2`
-  margin: 0;
-`;
-
-const InvisibleLink = styled.div`
-  @media screen and (min-width: 1085px) {
-    display: none;
+    color: ${theme.colors.primary};
+    
+    span {
+      color: ${theme.colors.text.primary};
+    }
   }
 `;
 
-interface NavbarProps {
-  /**
-   * Currently-selected screen to show.
-   */
-  screen: string;
-  /**
-   * setState function for which screen to show.
-   */
-  setScreen: (screen: string) => void;
-  menuDown: boolean;
-  setMenuDown: Dispatch<SetStateAction<boolean>>;
-}
+const NavLinks = styled.div<{ isOpen: boolean }>`
+  display: flex;
+  gap: 2rem;
 
-const Navbar = ({ screen, setScreen, menuDown, setMenuDown }: NavbarProps) => {
-  let isClicked = false;
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: ${theme.colors.background};
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    transform: ${({ isOpen }) => (isOpen ? "translateX(0)" : "translateX(100%)")};
+    transition: transform 0.3s ease-in-out;
+  }
+`;
 
-  const [hamburgerIcon, setHamburgerIcon] = useState(true);
+const StyledNavLink = styled(NavLink)`
+  color: ${theme.colors.text.primary};
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+
+  &:hover,
+  &.active {
+    color: ${theme.colors.primary};
+  }
+
+  &.active {
+    font-weight: 600;
+  }
+`;
+
+const Hamburger = styled.button`
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: ${theme.colors.text.primary};
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
+  }
+`;
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   return (
-    <>
-      <Hamburger
-        onClick={() => {
-          document?.querySelector(".menu")?.classList.toggle("isClicked");
+    <NavContainer>
+      <Logo to="/" onClick={closeMenu}>
+        Dean <span>Spooner</span>
+      </Logo>
 
-          setHamburgerIcon(!hamburgerIcon);
-
-          setMenuDown(!menuDown);
-
-          isClicked =
-            document?.querySelector(".menu")?.classList.contains("isClicked") ??
-            false;
-
-          document
-            ?.querySelector(".menu")
-            ?.classList?.toggle("isNotClicked", !isClicked);
-        }}
-      >
-        <img src={hamburgerIcon ? HamburgerIcon : CloseIcon} />
+      <Hamburger onClick={toggleMenu} aria-label="Toggle navigation">
+        <img src={isOpen ? CloseIcon : HamburgerIcon} alt="Menu" />
       </Hamburger>
-      <div className={`menu`}>
-        <Bar>
-          <LinkBox
-            onClick={() => setScreen("home")}
-            isScreen={screen === "home"}
-          >
-            <Link>Home</Link>
-          </LinkBox>
-          <LinkBox
-            onClick={() => setScreen("about")}
-            isScreen={screen === "about"}
-          >
-            <Link>About Dean</Link>
-          </LinkBox>
-          <LinkBox
-            onClick={() => setScreen("professional")}
-            isScreen={screen === "professional"}
-          >
-            <Link>Professional Experience</Link>
-          </LinkBox>
-          <LinkBox
-            onClick={() => setScreen("personal")}
-            isScreen={screen === "personal"}
-          >
-            <Link>Personal Projects</Link>
-          </LinkBox>
-          <LinkBox
-            onClick={() => setScreen("contact")}
-            isScreen={screen === "contact"}
-          >
-            <Link>Contact</Link>
-          </LinkBox>
-          <InvisibleLink />
-          <InvisibleLink />
-          <InvisibleLink />
-        </Bar>
-      </div>
-    </>
+
+      <NavLinks isOpen={isOpen}>
+        <StyledNavLink to="/" onClick={closeMenu}>
+          Home
+        </StyledNavLink>
+        <StyledNavLink to="/about" onClick={closeMenu}>
+          About
+        </StyledNavLink>
+        <StyledNavLink to="/professional" onClick={closeMenu}>
+          Experience
+        </StyledNavLink>
+        <StyledNavLink to="/personal" onClick={closeMenu}>
+          Projects
+        </StyledNavLink>
+        <StyledNavLink to="/contact" onClick={closeMenu}>
+          Contact
+        </StyledNavLink>
+      </NavLinks>
+    </NavContainer>
   );
 };
 
