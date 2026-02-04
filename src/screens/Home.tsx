@@ -1,19 +1,18 @@
 import styled from "styled-components";
 import { theme } from "../theme";
 import shikoku from "../assets/images/shikoku.png";
+import TechStack from "../components/TechStack";
 
 const HeroSection = styled.section`
   min-height: calc(100vh - 80px);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: ${theme.spacing.lg};
-
   overflow: hidden;
 
   @media (max-width: 768px) {
-    flex-direction: column-reverse;
-    padding: ${theme.spacing.md};
+    padding: ${theme.spacing.md} ${theme.spacing.md};
     text-align: center;
   }
 `;
@@ -28,7 +27,7 @@ const ContentWrapper = styled.div`
 
   @media (max-width: 1024px) {
     flex-direction: column-reverse;
-    gap: ${theme.spacing.lg};
+    gap: ${theme.spacing.sm};
     text-align: center;
   }
 `;
@@ -41,7 +40,6 @@ const Greeting = styled.h2`
   color: ${theme.colors.primary};
   font-size: ${theme.typography.h3.fontSize};
   font-weight: 500;
-  margin-bottom: ${theme.spacing.xs};
 `;
 
 const MainHeading = styled.h1`
@@ -50,7 +48,6 @@ const MainHeading = styled.h1`
   background: linear-gradient(135deg, ${theme.colors.text.primary} 0%, ${theme.colors.text.secondary} 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: ${theme.spacing.md};
   line-height: 1.1;
 
   @media (max-width: 768px) {
@@ -62,7 +59,6 @@ const SubText = styled.p`
   color: ${theme.colors.text.primary};
   font-size: 1.25rem;
   line-height: 1.6;
-  margin-bottom: ${theme.spacing.lg};
   max-width: 600px;
 
   @media (max-width: 1024px) {
@@ -101,7 +97,58 @@ const ProfileImage = styled.img`
   }
 `;
 
+const AnimationSection = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: ${theme.spacing.md};
+  margin: ${theme.spacing.lg} auto 0;
+  position: relative;
+  background: transparent;
+  
+  /* Use mask-image for smooth transparency at the ends */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+
+  @media (max-width: 768px) {
+    width: 100vw;
+    margin: ${theme.spacing.md} calc(-1 * ${theme.spacing.md}) 0;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+`;
+
+const ScrollTrack = styled.div<{ $direction: "forward" | "backward" }>`
+  display: flex;
+  width: max-content;
+  animation: ${props => props.$direction === "forward" ? "scrollForward" : "scrollBackward"} 60s linear infinite;
+  gap: 8px;
+
+  @keyframes scrollForward {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes scrollBackward {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+    
+`;
+
+const StyledTechStack = styled(TechStack)`
+  margin-bottom: 0;
+`;
+
 const Home = () => {
+  const group1 = ["React", "TypeScript", "Next.js", "React Native", "Expo", "Zustand", "Redux", "Tailwind", "CSS", "HTML", "JavaScript", "Styled Components"];
+  const group2 = ["Node.js", "Python", "Express", "MySQL", "Docker", "AWS", "Google Cloud", "Vercel", "Jest", "Cypress", "Detox", "Storybook", "i18n", "Bitbucket"];
+
+  const repeatedGroup1 = [...group1, ...group1];
+  const repeatedGroup2 = [...group2, ...group2];
+
   return (
     <HeroSection>
       <ContentWrapper>
@@ -118,6 +165,16 @@ const Home = () => {
           <ProfileImage src={shikoku} alt="Dean in Shirotori, Shikoku" />
         </ImageWrapper>
       </ContentWrapper>
+      <AnimationSection>
+        <ScrollTrack $direction="forward">
+          <StyledTechStack technologies={repeatedGroup1} noWrap large />
+          <StyledTechStack technologies={repeatedGroup1} noWrap large />
+        </ScrollTrack>
+        <ScrollTrack $direction="backward">
+          <StyledTechStack technologies={repeatedGroup2} noWrap large />
+          <StyledTechStack technologies={repeatedGroup2} noWrap large />
+        </ScrollTrack>
+      </AnimationSection>
     </HeroSection>
   );
 };
