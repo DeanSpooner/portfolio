@@ -187,7 +187,7 @@ const Professional = () => {
         </CardHeader>
         <CardContent isOpen={openCard === "wre"}>
           <SectionTitle>Tech Stack</SectionTitle>
-          <TechStack technologies={["TypeScript", "Python", "React", "React Native", "Next", "Expo", "Zustand", "i18n Internationalization", "Jest", "Detox", "Cypress", "Storybook", "Tailwind", "iOS xCode", "Android Studio", "AWS (S3 and CloudFront)", "Bitbucket"]} />
+          <TechStack technologies={["TypeScript", "Python", "React", "React Native", "Next", "Expo", "Zustand", "i18n Internationalization", "Jest", "Detox", "Cypress", "Storybook", "Tailwind", "iOS Xcode", "Android Studio", "AWS (S3 and CloudFront)", "Bitbucket"]} />
           <SectionTitle>Job role and duties</SectionTitle>
           <List>
             <ListItem>
