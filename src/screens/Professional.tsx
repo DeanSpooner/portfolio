@@ -187,7 +187,7 @@ const Professional = () => {
         </CardHeader>
         <CardContent isOpen={openCard === "wre"}>
           <SectionTitle>Tech Stack</SectionTitle>
-          <TechStack technologies={["TypeScript", "Python", "React", "React Native", "Next", "Expo", "Zustand", "i18n Internationalization", "Jest", "Detox", "Cypress", "Storybook", "Tailwind", "iOS Xcode", "Android Studio", "AWS (S3 and CloudFront)", "Bitbucket"]} />
+          <TechStack technologies={["TypeScript", "Python", "React", "React Native", "Next", "Expo", "Zustand", "i18n Internationalization", "Jest", "Detox", "Cypress", "Storybook", "Tailwind", "Lottie", "iOS Xcode", "Android Studio", "Bitbucket", "AWS (S3 and CloudFront)",]} />
           <SectionTitle>Job role and duties</SectionTitle>
           <List>
             <ListItem>
@@ -197,7 +197,7 @@ const Professional = () => {
               As the lead developer, I am responsible for the deployment of the Infinity app through our testing and production release pipelines, via Expo, Apple and Google Play Stores, as well as any and all necessary package and security updates to Expo, React, React Native, Next, and other associated packages;
             </ListItem>
             <ListItem>
-              Also lead developer on <a target='_blank' href='https://whiteroseeducation.com/1-minute-maths'>1-Minute Maths</a>, a mathematics app for KS1 children, launched in January 2022, with over <b>5,000,000</b> downloads in total so far. Just like with Infinity, I am responsible for the deployment of the Infinity app through our testing and production release pipelines, via Expo, Apple and Google Play Stores, as well as any and all necessary package and security updates to Expo, React, React Native, Next, and other associated packages;
+              Also lead developer on <a target='_blank' href='https://whiteroseeducation.com/1-minute-maths'>1-Minute Maths</a>, a mathematics app for KS1 children, launched in January 2022, with over <b>5,800,000</b> downloads in total so far. Just like with Infinity, I am responsible for the deployment of the Infinity app through our testing and production release pipelines, via Expo, Apple and Google Play Stores, as well as any and all necessary package and security updates to Expo, React, React Native, Next, and other associated packages;
             </ListItem>
             <ListItem>Ensuring robust tests are implemented and maintained, using Jest, Detox and Cypress, as well as implementing BitBucket pipelines to ensure high code hygiene and quality;</ListItem>
             <ListItem>Creating new components to enhance school pupils' understanding and learning of mathematics;</ListItem>
