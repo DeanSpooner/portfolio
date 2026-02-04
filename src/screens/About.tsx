@@ -104,10 +104,10 @@ const About = () => {
         </ImagesContainer>
         <TextContent>
           <p>
-            My name is Dean Spooner and I am an app and frontend web developer. Currently I am part of a small dev team building and maintaing large app for an education company in the UK; previously I was a mid-level frontend developer for a multinational digital agency, building various web projects for large international clients. Prior to this, I trained on a software development bootcamp, while working in my previous career as a primary school teacher.
+            My name is Dean Spooner and I am an app and frontend web developer. Currently I am the lead app developer at White Rose Education, leading development and maintenance of two educational apps with over 6 million downloads as of February 2026. Previously, I was a mid-level frontend developer at DEPT, a multinational digital agency in Manchester, supporting work on various web projects for large international clients. Prior to this, I trained on a software development bootcamp, while working in my previous career as a primary school teacher.
           </p>
           <p>
-            Outside of work, I enjoy studying Japanese, travelling around Japan, cooking, reading, and spending time with my friends. I also enjoy learning 3D modelling in Blender and three.js, and using Python to develop scripts to automate lots of work and tasks in my work and home life.
+            Outside of work, I enjoy studying Japanese, travelling around Japan, cooking, reading, and spending time with my friends. I also enjoy learning 3D modelling in Blender and Three.js, and using Python to develop scripts to automate lots of work and tasks in my work and home life. On top of this, I enjoy working on open-source projects, such as working with the Public Transportation Open Data Center of Japan to build open-source Japanese transportation web apps.
           </p>
           <p>
             よろしくお願いします！ (Pleased to meet you!)
