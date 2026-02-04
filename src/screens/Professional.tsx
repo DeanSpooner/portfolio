@@ -177,7 +177,6 @@ const Professional = () => {
         <br />
         Please click on a card to expand its details:
       </Description>
-      
       <ExperienceCard isOpen={openCard === "wre"}>
         <CardHeader onClick={() => toggleCard("wre")}>
           <HeaderContent>
@@ -188,16 +187,19 @@ const Professional = () => {
         </CardHeader>
         <CardContent isOpen={openCard === "wre"}>
           <SectionTitle>Tech Stack</SectionTitle>
-          <TechStack technologies={["TypeScript", "Python", "React", "React Native", "Next", "Expo", "Zustand", "i18n Internationalization", "Jest", "Cypress", "Storybook", "iOS XCode", "Android Studio", "AWS (S3 and CloudFront)", "Bitbucket"]} />
-
+          <TechStack technologies={["TypeScript", "Python", "React", "React Native", "Next", "Expo", "Zustand", "i18n Internationalization", "Jest", "Detox", "Cypress", "Storybook", "Tailwind", "iOS xCode", "Android Studio", "AWS (S3 and CloudFront)", "Bitbucket"]} />
           <SectionTitle>Job role and duties</SectionTitle>
           <List>
             <ListItem>
-              Lead developer on <a target='_blank' href='https://whiteroseeducation.com/infinity'>Infinity</a>, a new, large-scale educational app rolled out in schools throughout the United Kingdom in June 2024 - to date, we have achieved over a quarter of a million downloads, and over 15 million questions answered through Infinity. I collaborate with other developers and architects, both app and web-based, as well as business leaders, product owners, educational specialists, UI/UX designers, and external design agencies, to build, enhance and maintain Infinity;
+              Lead developer on <a target='_blank' href='https://whiteroseeducation.com/infinity'>Infinity</a>, a new, large-scale educational app rolled out in schools throughout the United Kingdom in June 2024 - to date, we have achieved over <b>400,000</b> downloads, and over <b>200,000,000</b> questions answered through Infinity. I collaborate with other developers and architects, both app and web-based, as well as business leaders, product owners, educational specialists, UI/UX designers, and external design agencies, to build, enhance and maintain Infinity;
             </ListItem>
             <ListItem>
               As the lead developer, I am responsible for the deployment of the Infinity app through our testing and production release pipelines, via Expo, Apple and Google Play Stores, as well as any and all necessary package and security updates to Expo, React, React Native, Next, and other associated packages;
             </ListItem>
+            <ListItem>
+              Also lead developer on <a target='_blank' href='https://whiteroseeducation.com/1-minute-maths'>1-Minute Maths</a>, a mathematics app for KS1 children, launched in January 2022, with over <b>5,000,000</b> downloads in total so far. Just like with Infinity, I am responsible for the deployment of the Infinity app through our testing and production release pipelines, via Expo, Apple and Google Play Stores, as well as any and all necessary package and security updates to Expo, React, React Native, Next, and other associated packages;
+            </ListItem>
+            <ListItem>Ensuring robust tests are implemented and maintained, using Jest, Detox and Cypress, as well as implementing BitBucket pipelines to ensure high code hygiene and quality;</ListItem>
             <ListItem>Creating new components to enhance school pupils' understanding and learning of mathematics;</ListItem>
             <ListItem>Using TypeScript and Zustand to create new mathematical question generators, adhering to strict mathematical boundaries and conditions;</ListItem>
             <ListItem>Creation of new teacher-based features, such as quiz and class statistics, on the website, using Next, Chart.js, Storybook, Jest and Cypress;</ListItem>
@@ -208,20 +210,17 @@ const Professional = () => {
           </List>
         </CardContent>
       </ExperienceCard>
-
       <ExperienceCard isOpen={openCard === "dept"}>
         <CardHeader onClick={() => toggleCard("dept")}>
           <HeaderContent>
-             <RoleTitle>Frontend Developer - DEPT UK</RoleTitle>
-             <HeaderDate>November 2021 - November 2022</HeaderDate>
+            <RoleTitle>Frontend Developer - DEPT UK</RoleTitle>
+            <HeaderDate>November 2021 - November 2022</HeaderDate>
           </HeaderContent>
           <ChevronIcon src={Chevron} isOpen={openCard === "dept"} />
         </CardHeader>
         <CardContent isOpen={openCard === "dept"}>
-          
           <SectionTitle>Tech Stack</SectionTitle>
           <TechStack technologies={["HTML", "CSS", "SCSS/Sass", "Styled Components", "JavaScript/TypeScript", "React", "Next.js", "Jest", "React Testing Library", "Percy", "Headless CMSs (Strapi, Contentful)", "Node.js", "NPM", "Docker", "Bitbucket", "Azure", "Octopus Deployments"]} />
-
           <SectionTitle>Job role and duties</SectionTitle>
           <List>
             <ListItem>Collaborating with other frontend and backend developers and architects, clients, product owners, UI/UX designers to build and maintain various large websites and web apps for clients;</ListItem>
@@ -235,31 +234,28 @@ const Professional = () => {
           </List>
         </CardContent>
       </ExperienceCard>
-
       <ExperienceCard isOpen={openCard === "tm"}>
         <CardHeader onClick={() => toggleCard("tm")}>
           <HeaderContent>
-             <RoleTitle>Foundation Software Developer - Thinkmoney</RoleTitle>
-             <HeaderDate>September 2021 - November 2021</HeaderDate>
+            <RoleTitle>Foundation Software Developer - Thinkmoney</RoleTitle>
+            <HeaderDate>September 2021 - November 2021</HeaderDate>
           </HeaderContent>
           <ChevronIcon src={Chevron} isOpen={openCard === "tm"} />
         </CardHeader>
         <CardContent isOpen={openCard === "tm"}>
-          
           <SectionTitle>Tech Stack</SectionTitle>
           <TechStack technologies={["HTML", "CSS", "SCSS/Sass", "JavaScript", "A/B Testing", "OutSystems"]} />
-          
           <SectionTitle>Job role and duties</SectionTitle>
           <List>
-             <ListItem>Collaborating with other software developers and architects, product owners, UI/UX designers to maintain services on the Thinkmoney website and app;</ListItem>
-             <ListItem>Studied and used OutSystems to build new app and website features, as well as maintain and refactor exists features;</ListItem>
-             <ListItem>Implemented A/B testing to test new variations of components, to track improved user engagement and interactions;</ListItem>
-             <ListItem>Worked in an Agile environment with many business stakeholders to ensure swift, timely releases were met.</ListItem>
+            <ListItem>Collaborating with other software developers and architects, product owners, UI/UX designers to maintain services on the Thinkmoney website and app;</ListItem>
+            <ListItem>Studied and used OutSystems to build new app and website features, as well as maintain and refactor exists features;</ListItem>
+            <ListItem>Implemented A/B testing to test new variations of components, to track improved user engagement and interactions;</ListItem>
+            <ListItem>Worked in an Agile environment with many business stakeholders to ensure swift, timely releases were met.</ListItem>
           </List>
         </CardContent>
       </ExperienceCard>
 
-       <ExperienceCard isOpen={openCard === "teaching"}>
+      <ExperienceCard isOpen={openCard === "teaching"}>
         <CardHeader onClick={() => toggleCard("teaching")}>
           <HeaderContent>
             <RoleTitle>Various Teaching Positions - UK</RoleTitle>
@@ -268,7 +264,6 @@ const Professional = () => {
           <ChevronIcon src={Chevron} isOpen={openCard === "teaching"} />
         </CardHeader>
         <CardContent isOpen={openCard === "teaching"}>
-          
           <SectionTitle>Job role and duties</SectionTitle>
           <List>
             <ListItem>Taught in various primary schools across Manchester and Newcastle-upon-Tyne, UK, across all year groups;</ListItem>
