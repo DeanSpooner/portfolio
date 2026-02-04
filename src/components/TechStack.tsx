@@ -33,8 +33,8 @@ interface TechStackProps {
 const TechStack = ({ technologies, className, noWrap, large }: TechStackProps) => {
   return (
     <Container className={className} $noWrap={noWrap}>
-      {technologies.map((tech) => (
-        <Tag key={tech} $large={large}>{tech}</Tag>
+      {technologies.map((tech, index) => (
+        <Tag key={`${tech}-${index}`} $large={large}>{tech}</Tag>
       ))}
     </Container>
   );

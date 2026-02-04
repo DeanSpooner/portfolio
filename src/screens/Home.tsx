@@ -112,7 +112,7 @@ const AnimationSection = styled.div`
   -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     width: 100vw;
     margin: ${theme.spacing.md} calc(-1 * ${theme.spacing.md}) 0;
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
