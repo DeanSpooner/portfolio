@@ -143,8 +143,8 @@ const StyledTechStack = styled(TechStack)`
 `;
 
 const Home = () => {
-  const group1 = ["React", "TypeScript", "Next.js", "React Native", "Expo", "Zustand", "Redux", "Tailwind", "CSS", "HTML", "JavaScript", "Styled Components"];
-  const group2 = ["Node.js", "Python", "Express", "MySQL", "Docker", "AWS", "Google Cloud", "Vercel", "Jest", "Cypress", "Detox", "Storybook", "i18n", "Bitbucket"];
+  const group1 = ["React", "TypeScript", "Next.js", "React Native", "Expo", "Zustand", "Redux", "Tailwind", "CSS", "HTML", "JavaScript", "Styled Components", "ChatGPT", "Google Gemini", "Claude", "Blender", "Three.js"];
+  const group2 = ["Node.js", "Python", "Express", "MySQL", "Docker", "AWS", "Google Cloud", "Vercel", "Jest", "Cypress", "Detox", "Storybook", "i18n", "Bitbucket", "Cursor", "Google Antigravity", "Adobe Illustrator", "Inkscape"];
 
   const repeatedGroup1 = [...group1, ...group1];
   const repeatedGroup2 = [...group2, ...group2];
