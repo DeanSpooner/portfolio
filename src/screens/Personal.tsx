@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { theme } from "../theme";
-import TechStack from "../components/TechStack";
-import githubIcon from "../assets/images/github.png";
-import webIcon from "../assets/images/world-wide-web.png";
-import youtubeIcon from "../assets/images/youtube.png";
+import styled from 'styled-components';
+import { theme } from '../theme';
+import TechStack from '../components/TechStack';
+import githubIcon from '../assets/images/github.png';
+import webIcon from '../assets/images/world-wide-web.png';
+import youtubeIcon from '../assets/images/youtube.png';
 
 const Section = styled.section`
   padding: ${theme.spacing.lg} ${theme.spacing.lg};
@@ -26,7 +26,7 @@ const Title = styled.h1`
   width: 100%;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -48,7 +48,7 @@ const ProjectGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: ${theme.spacing.md};
-  
+
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
@@ -105,16 +105,16 @@ const Description = styled.div`
     padding-left: 1.2rem;
     margin-top: 0.5rem;
   }
-  
+
   li {
     margin-bottom: 0.25rem;
   }
-  
+
   a {
     color: ${theme.colors.text.accent};
     text-decoration: none;
     &:hover {
-        text-decoration: underline;
+      text-decoration: underline;
     }
   }
 `;
@@ -156,27 +156,137 @@ const Personal = () => {
     <Section>
       <Title>Personal Projects</Title>
       <IntroText>
-        Below is a selection of some personal projects from my GitHub repositories.
+        Below is a selection of some personal projects from my GitHub
+        repositories.
       </IntroText>
 
       <ProjectGrid>
+        <ProjectCard>
+          <CardHeader>
+            <ProjectTitle>Banked</ProjectTitle>
+            <ProjectSubtitle>App (Built February 2026)</ProjectSubtitle>
+          </CardHeader>
+          <CardBody>
+            <TechStack
+              technologies={[
+                'TypeScript',
+                'React Native/React',
+                'Expo/Expo Go',
+                'Jest',
+                'Husky',
+                'date-fns',
+                'i18n',
+                'Zod',
+                'Xcode/iOS Simulator',
+                'Android Studio/Android Emulator',
+                'External APIs',
+              ]}
+            />
+            <Description>
+              Banked is a bank holiday information app, using bank holiday data
+              provided by the{' '}
+              <a target='_blank' href='https://www.odpt.org/'>
+                GOV.uk website
+              </a>{' '}
+              to allow the user to view the next five unique bank holidays
+              across the United Kingdom, edit bank holiday names and dates,
+              store bank holidays on the device's storage, and save bank
+              holidays to the device's calendar. Light, dark and system themes
+              are implemented, with full language support in English and
+              Japanese.
+            </Description>
+            <ActionButtons>
+              <IconButton
+                href='https://github.com/DeanSpooner/banked'
+                target='_blank'
+                title='GitHub Repo'
+              >
+                <img src={githubIcon} alt='GitHub' />
+              </IconButton>
+            </ActionButtons>
+          </CardBody>
+        </ProjectCard>
 
         <ProjectCard>
           <CardHeader>
             <ProjectTitle>Tokyo Metro Information</ProjectTitle>
-            <ProjectSubtitle>Full Stack (Built June 2025 - Present)</ProjectSubtitle>
+            <ProjectSubtitle>
+              Full Stack (Built June 2025 - Present)
+            </ProjectSubtitle>
           </CardHeader>
           <CardBody>
-            <TechStack technologies={["HTML", "TypeScript", "React", "Next.js", "Tailwind", "Vercel", "i18n", "External APIs"]} />
+            <TechStack
+              technologies={[
+                'HTML',
+                'TypeScript',
+                'React',
+                'Next.js',
+                'Tailwind',
+                'Vercel',
+                'i18n',
+                'External APIs',
+              ]}
+            />
             <Description>
-              Using data provided by the <a target="_blank" href="https://www.odpt.org/">Public Transportation Open Data Center 公共交通オープンデータセンター</a>, this project aims to provide information about every line and every station on the Tokyo Metro, including timetables and routes. Full language support for English, Japanese, Chinese (Simplified) and Korean.
+              Using data provided by the{' '}
+              <a target='_blank' href='https://www.odpt.org/'>
+                Public Transportation Open Data Center
+                公共交通オープンデータセンター
+              </a>
+              , this project aims to provide information about every line and
+              every station on the Tokyo Metro, including timetables and routes.
+              Full language support for English, Japanese, Chinese (Simplified)
+              and Korean.
             </Description>
             <ActionButtons>
-              <IconButton href="https://github.com/DeanSpooner/metro-joho" target="_blank" title="GitHub Repo">
-                <img src={githubIcon} alt="GitHub" />
+              <IconButton
+                href='https://github.com/DeanSpooner/metro-joho'
+                target='_blank'
+                title='GitHub Repo'
+              >
+                <img src={githubIcon} alt='GitHub' />
               </IconButton>
-              <IconButton href="https://metro-joho.vercel.app/" target="_blank" title="Live Page">
-                <img src={webIcon} alt="Live" />
+              <IconButton
+                href='https://metro-joho.vercel.app/'
+                target='_blank'
+                title='Live Page'
+              >
+                <img src={webIcon} alt='Live' />
+              </IconButton>
+            </ActionButtons>
+          </CardBody>
+        </ProjectCard>
+
+        <ProjectCard>
+          <CardHeader>
+            <ProjectTitle>Ten Frame</ProjectTitle>
+            <ProjectSubtitle>
+              App (Built September - October 2022)
+            </ProjectSubtitle>
+          </CardHeader>
+          <CardBody>
+            <TechStack
+              technologies={[
+                'TypeScript',
+                'React Native/React',
+                'Expo/Expo Go',
+                'Jest',
+                'Xcode/iOS Simulator',
+                'Android Studio/Android Emulator',
+              ]}
+            />
+            <Description>
+              This app provides a simple, interactible mathematical ten-frame
+              that children can use on an app. Included are an interactive ten
+              frame mode and a game mode.
+            </Description>
+            <ActionButtons>
+              <IconButton
+                href='https://github.com/DeanSpooner/ten-frame'
+                target='_blank'
+                title='GitHub Repo'
+              >
+                <img src={githubIcon} alt='GitHub' />
               </IconButton>
             </ActionButtons>
           </CardBody>
@@ -188,13 +298,35 @@ const Personal = () => {
             <ProjectSubtitle>Frontend (Built August 2022)</ProjectSubtitle>
           </CardHeader>
           <CardBody>
-            <TechStack technologies={["HTML", "CSS", "TypeScript", "Next.js", "Storybook", "Styled Components", "NPM", "Axios", "Jest", "React Testing Library", "External APIs"]} />
+            <TechStack
+              technologies={[
+                'HTML',
+                'CSS',
+                'TypeScript',
+                'Next.js',
+                'Storybook',
+                'Styled Components',
+                'NPM',
+                'Axios',
+                'Jest',
+                'React Testing Library',
+                'External APIs',
+              ]}
+            />
             <Description>
-              A Pokémon information portal, demonstrating examples of static-site generated (SSG) and server-side rendered (SSR) pages. Built in TypeScript using Next.js and React, as part of my successful review for promotion to Mid-Level Frontend Developer at DEPT, built in my free time over the space of a week.
+              A Pokémon information portal, demonstrating examples of
+              static-site generated (SSG) and server-side rendered (SSR) pages.
+              Built in TypeScript using Next.js and React, as part of my
+              successful review for promotion to Mid-Level Frontend Developer at
+              DEPT, built in my free time over the space of a week.
             </Description>
             <ActionButtons>
-              <IconButton href="https://github.com/DeanSpooner/pokedex" target="_blank" title="GitHub Repo">
-                <img src={githubIcon} alt="GitHub" />
+              <IconButton
+                href='https://github.com/DeanSpooner/pokedex'
+                target='_blank'
+                title='GitHub Repo'
+              >
+                <img src={githubIcon} alt='GitHub' />
               </IconButton>
             </ActionButtons>
           </CardBody>
@@ -203,19 +335,46 @@ const Personal = () => {
         <ProjectCard>
           <CardHeader>
             <ProjectTitle>Ukana Japanese Language Learning App</ProjectTitle>
-            <ProjectSubtitle>Full Stack (Built October - November 2021)</ProjectSubtitle>
+            <ProjectSubtitle>
+              Full Stack (Built October - November 2021)
+            </ProjectSubtitle>
           </CardHeader>
           <CardBody>
-            <TechStack technologies={["HTML", "CSS", "JavaScript", "React", "Axios", "MySQL", "Docker", "Express", "Heroku", "APIs"]} />
+            <TechStack
+              technologies={[
+                'HTML',
+                'CSS',
+                'JavaScript',
+                'React',
+                'Axios',
+                'MySQL',
+                'Docker',
+                'Express',
+                'Heroku',
+                'APIs',
+              ]}
+            />
             <Description>
-              A React web app for learners of Japanese. Hiragana, Katakana and Kanji are all available to learn, as well as a search engine implemented for the user to search for specific words. Backend login/admin system created and set up, ready to add in customised grammar lessons.
+              A React web app for learners of Japanese. Hiragana, Katakana and
+              Kanji are all available to learn, as well as a search engine
+              implemented for the user to search for specific words. Backend
+              login/admin system created and set up, ready to add in customised
+              grammar lessons.
             </Description>
             <ActionButtons>
-              <IconButton href="https://github.com/DeanSpooner/ukana" target="_blank" title="GitHub Repo">
-                <img src={githubIcon} alt="GitHub" />
+              <IconButton
+                href='https://github.com/DeanSpooner/ukana'
+                target='_blank'
+                title='GitHub Repo'
+              >
+                <img src={githubIcon} alt='GitHub' />
               </IconButton>
-              <IconButton href="https://deanspooner.github.io/ukana" target="_blank" title="Live Page">
-                <img src={webIcon} alt="Live" />
+              <IconButton
+                href='https://deanspooner.github.io/ukana'
+                target='_blank'
+                title='Live Page'
+              >
+                <img src={webIcon} alt='Live' />
               </IconButton>
             </ActionButtons>
           </CardBody>
@@ -224,19 +383,47 @@ const Personal = () => {
         <ProjectCard>
           <CardHeader>
             <ProjectTitle>Cool Dinners</ProjectTitle>
-            <ProjectSubtitle>Final Bootcamp Project - Full Stack (Built July - September 2021)</ProjectSubtitle>
+            <ProjectSubtitle>
+              Final Bootcamp Project - Full Stack (Built July - September 2021)
+            </ProjectSubtitle>
           </CardHeader>
           <CardBody>
-            <TechStack technologies={["HTML", "CSS", "JavaScript", "React", "Node.js", "Moment.js", "Axios", "MySQL", "Docker", "Express", "Heroku", "Jest", "APIs"]} />
+            <TechStack
+              technologies={[
+                'HTML',
+                'CSS',
+                'JavaScript',
+                'React',
+                'Node.js',
+                'Moment.js',
+                'Axios',
+                'MySQL',
+                'Docker',
+                'Express',
+                'Heroku',
+                'Jest',
+                'APIs',
+              ]}
+            />
             <Description>
-              A React web app that allows school staff to create and edit food orders for their students. Created as a final paired project with my friend and coursemate Matt Holmes.
+              A React web app that allows school staff to create and edit food
+              orders for their students. Created as a final paired project with
+              my friend and coursemate Matt Holmes.
             </Description>
             <ActionButtons>
-              <IconButton href="https://github.com/MattHolmes2909/Cool-Dinners-Frontend" target="_blank" title="GitHub Repo">
-                <img src={githubIcon} alt="GitHub" />
+              <IconButton
+                href='https://github.com/MattHolmes2909/Cool-Dinners-Frontend'
+                target='_blank'
+                title='GitHub Repo'
+              >
+                <img src={githubIcon} alt='GitHub' />
               </IconButton>
-              <IconButton href="https://www.youtube.com/watch?v=cEsCZTyqzLY" target="_blank" title="Video Demo">
-                <img src={youtubeIcon} alt="YouTube" />
+              <IconButton
+                href='https://www.youtube.com/watch?v=cEsCZTyqzLY'
+                target='_blank'
+                title='Video Demo'
+              >
+                <img src={youtubeIcon} alt='YouTube' />
               </IconButton>
             </ActionButtons>
           </CardBody>
@@ -245,16 +432,34 @@ const Personal = () => {
         <ProjectCard>
           <CardHeader>
             <ProjectTitle>Surreal Estate Properties</ProjectTitle>
-            <ProjectSubtitle>Frontend (Built June - August 2021)</ProjectSubtitle>
+            <ProjectSubtitle>
+              Frontend (Built June - August 2021)
+            </ProjectSubtitle>
           </CardHeader>
           <CardBody>
-            <TechStack technologies={["HTML", "CSS", "JavaScript", "React", "Facebook Developer Tools", "Axios", "Jest", "External APIs"]} />
+            <TechStack
+              technologies={[
+                'HTML',
+                'CSS',
+                'JavaScript',
+                'React',
+                'Facebook Developer Tools',
+                'Axios',
+                'Jest',
+                'External APIs',
+              ]}
+            />
             <Description>
-              A React web app that allows users to browse and search through different properties linked to an external API.
+              A React web app that allows users to browse and search through
+              different properties linked to an external API.
             </Description>
             <ActionButtons>
-              <IconButton href="https://github.com/DeanSpooner/surreal-estate" target="_blank" title="GitHub Repo">
-                <img src={githubIcon} alt="GitHub" />
+              <IconButton
+                href='https://github.com/DeanSpooner/surreal-estate'
+                target='_blank'
+                title='GitHub Repo'
+              >
+                <img src={githubIcon} alt='GitHub' />
               </IconButton>
             </ActionButtons>
           </CardBody>
@@ -263,19 +468,40 @@ const Personal = () => {
         <ProjectCard>
           <CardHeader>
             <ProjectTitle>NASA Image Search Engine</ProjectTitle>
-            <ProjectSubtitle>Frontend (Built June - August 2021)</ProjectSubtitle>
+            <ProjectSubtitle>
+              Frontend (Built June - August 2021)
+            </ProjectSubtitle>
           </CardHeader>
           <CardBody>
-            <TechStack technologies={["HTML", "CSS", "JavaScript", "React", "Axios", "Jest", "External APIs"]} />
+            <TechStack
+              technologies={[
+                'HTML',
+                'CSS',
+                'JavaScript',
+                'React',
+                'Axios',
+                'Jest',
+                'External APIs',
+              ]}
+            />
             <Description>
-              An image search engine that takes in a search term from a user, and returns images from a NASA API endpoint.
+              An image search engine that takes in a search term from a user,
+              and returns images from a NASA API endpoint.
             </Description>
             <ActionButtons>
-              <IconButton href="https://github.com/DeanSpooner/nasa-search-engine" target="_blank" title="GitHub Repo">
-                <img src={githubIcon} alt="GitHub" />
+              <IconButton
+                href='https://github.com/DeanSpooner/nasa-search-engine'
+                target='_blank'
+                title='GitHub Repo'
+              >
+                <img src={githubIcon} alt='GitHub' />
               </IconButton>
-              <IconButton href="https://deanspooner.github.io/nasa-search-engine/" target="_blank" title="Live Page">
-                <img src={webIcon} alt="Live" />
+              <IconButton
+                href='https://deanspooner.github.io/nasa-search-engine/'
+                target='_blank'
+                title='Live Page'
+              >
+                <img src={webIcon} alt='Live' />
               </IconButton>
             </ActionButtons>
           </CardBody>
@@ -287,13 +513,29 @@ const Personal = () => {
             <ProjectSubtitle>Frontend (Built June - July 2021)</ProjectSubtitle>
           </CardHeader>
           <CardBody>
-            <TechStack technologies={["HTML", "CSS", "JavaScript", "React", "Axios", "Jest", "External APIs"]} />
+            <TechStack
+              technologies={[
+                'HTML',
+                'CSS',
+                'JavaScript',
+                'React',
+                'Axios',
+                'Jest',
+                'External APIs',
+              ]}
+            />
             <Description>
-              A real, working weather app that takes a UK location and returns the forecast for the next five days. Allows the user to see extra details for a particular day.
+              A real, working weather app that takes a UK location and returns
+              the forecast for the next five days. Allows the user to see extra
+              details for a particular day.
             </Description>
             <ActionButtons>
-              <IconButton href="https://github.com/DeanSpooner/weather-app" target="_blank" title="GitHub Repo">
-                <img src={githubIcon} alt="GitHub" />
+              <IconButton
+                href='https://github.com/DeanSpooner/weather-app'
+                target='_blank'
+                title='GitHub Repo'
+              >
+                <img src={githubIcon} alt='GitHub' />
               </IconButton>
             </ActionButtons>
           </CardBody>
@@ -305,13 +547,32 @@ const Personal = () => {
             <ProjectSubtitle>Backend (Built May 2021)</ProjectSubtitle>
           </CardHeader>
           <CardBody>
-            <TechStack technologies={["Node.js", "MySQL", "APIs", "Sequelize", "Express", "Mocha", "Chai", "Heroku", "Swagger"]} />
+            <TechStack
+              technologies={[
+                'Node.js',
+                'MySQL',
+                'APIs',
+                'Sequelize',
+                'Express',
+                'Mocha',
+                'Chai',
+                'Heroku',
+                'Swagger',
+              ]}
+            />
             <Description>
-              A backend book library. Takes CRUD requests on readers, books, authors and genres. Makes use of foreign keys to apply genres/authors to books, let readers borrow books and so on. Swagger applied as a frontend UI for users to use easily.
+              A backend book library. Takes CRUD requests on readers, books,
+              authors and genres. Makes use of foreign keys to apply
+              genres/authors to books, let readers borrow books and so on.
+              Swagger applied as a frontend UI for users to use easily.
             </Description>
             <ActionButtons>
-              <IconButton href="https://github.com/DeanSpooner/book-library" target="_blank" title="GitHub Repo">
-                <img src={githubIcon} alt="GitHub" />
+              <IconButton
+                href='https://github.com/DeanSpooner/book-library'
+                target='_blank'
+                title='GitHub Repo'
+              >
+                <img src={githubIcon} alt='GitHub' />
               </IconButton>
             </ActionButtons>
           </CardBody>
@@ -323,13 +584,29 @@ const Personal = () => {
             <ProjectSubtitle>Backend (Built May 2021)</ProjectSubtitle>
           </CardHeader>
           <CardBody>
-            <TechStack technologies={["Node.js", "MySQL", "APIs", "Express", "Mocha", "Chai", "Heroku"]} />
+            <TechStack
+              technologies={[
+                'Node.js',
+                'MySQL',
+                'APIs',
+                'Express',
+                'Mocha',
+                'Chai',
+                'Heroku',
+              ]}
+            />
             <Description>
-              A backend music library. Allows the use of a third-party application such as Postman to make CRUD requests, such as reading/adding/editing/deleting artists, albums or songs.
+              A backend music library. Allows the use of a third-party
+              application such as Postman to make CRUD requests, such as
+              reading/adding/editing/deleting artists, albums or songs.
             </Description>
             <ActionButtons>
-              <IconButton href="https://github.com/DeanSpooner/music-library" target="_blank" title="GitHub Repo">
-                <img src={githubIcon} alt="GitHub" />
+              <IconButton
+                href='https://github.com/DeanSpooner/music-library'
+                target='_blank'
+                title='GitHub Repo'
+              >
+                <img src={githubIcon} alt='GitHub' />
               </IconButton>
             </ActionButtons>
           </CardBody>
@@ -341,21 +618,30 @@ const Personal = () => {
             <ProjectSubtitle>Frontend (Built April 2021)</ProjectSubtitle>
           </CardHeader>
           <CardBody>
-            <TechStack technologies={["HTML", "CSS", "JavaScript", "Jest"]} />
+            <TechStack technologies={['HTML', 'CSS', 'JavaScript', 'Jest']} />
             <Description>
-              A simulator based on the Tozai line of the Tokyo Metro. An enhancement of my previous Cruise Ship Sim project built during my bootcamp.
+              A simulator based on the Tozai line of the Tokyo Metro. An
+              enhancement of my previous Cruise Ship Sim project built during my
+              bootcamp.
             </Description>
             <ActionButtons>
-              <IconButton href="https://github.com/DeanSpooner/tozai" target="_blank" title="GitHub Repo">
-                <img src={githubIcon} alt="GitHub" />
+              <IconButton
+                href='https://github.com/DeanSpooner/tozai'
+                target='_blank'
+                title='GitHub Repo'
+              >
+                <img src={githubIcon} alt='GitHub' />
               </IconButton>
-              <IconButton href="https://deanspooner.github.io/tozai/" target="_blank" title="Live Page">
-                <img src={webIcon} alt="Live" />
+              <IconButton
+                href='https://deanspooner.github.io/tozai/'
+                target='_blank'
+                title='Live Page'
+              >
+                <img src={webIcon} alt='Live' />
               </IconButton>
             </ActionButtons>
           </CardBody>
         </ProjectCard>
-
       </ProjectGrid>
     </Section>
   );
