@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { theme } from "../theme";
-import shikoku from "../assets/images/shikoku.png";
-import TechStack from "../components/TechStack";
+import styled from 'styled-components';
+import { theme } from '../theme';
+import shikoku from '../assets/images/shikoku.png';
+import TechStack from '../components/TechStack';
 
 const HeroSection = styled.section`
   min-height: calc(100vh - 80px);
@@ -45,7 +45,11 @@ const Greeting = styled.h2`
 const MainHeading = styled.h1`
   font-size: 5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, ${theme.colors.text.primary} 0%, ${theme.colors.text.secondary} 100%);
+  background: linear-gradient(
+    135deg,
+    ${theme.colors.text.primary} 0%,
+    ${theme.colors.text.secondary} 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.1;
@@ -107,35 +111,68 @@ const AnimationSection = styled.div`
   margin: ${theme.spacing.lg} auto 0;
   position: relative;
   background: transparent;
-  
+
   /* Use mask-image for smooth transparency at the ends */
-  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
 
   @media (max-width: 1200px) {
     width: 100vw;
     margin: ${theme.spacing.md} calc(-1 * ${theme.spacing.md}) 0;
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
   }
 `;
 
-const ScrollTrack = styled.div<{ $direction: "forward" | "backward" }>`
+const ScrollTrack = styled.div<{ $direction: 'forward' | 'backward' }>`
   display: flex;
   width: max-content;
-  animation: ${props => props.$direction === "forward" ? "scrollForward" : "scrollBackward"} 60s linear infinite;
+  animation: ${props =>
+      props.$direction === 'forward' ? 'scrollForward' : 'scrollBackward'}
+    60s linear infinite;
   gap: 8px;
 
   @keyframes scrollForward {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
 
   @keyframes scrollBackward {
-    from { transform: translateX(-50%); }
-    to { transform: translateX(0); }
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
   }
-    
 `;
 
 const StyledTechStack = styled(TechStack)`
@@ -143,8 +180,51 @@ const StyledTechStack = styled(TechStack)`
 `;
 
 const Home = () => {
-  const group1 = ["React", "TypeScript", "Next.js", "React Native", "Swift", "iOS Xcode", "Android Studio", "Expo", "Zustand", "Redux", "Tailwind", "CSS", "HTML", "JavaScript", "Styled Components", "ChatGPT", "Google Gemini", "Claude", "Blender", "Three.js"];
-  const group2 = ["Node.js", "Python", "Express", "MySQL", "Docker", "AWS", "Google Cloud", "Vercel", "Jest", "Cypress", "Detox", "Storybook", "i18n", "Bitbucket", "Cursor", "Google Antigravity", "Adobe Illustrator", "Inkscape", "Lottie"];
+  const group1 = [
+    'React',
+    'TypeScript',
+    'Next.js',
+    'React Native',
+    'Swift',
+    'iOS Xcode',
+    'Android Studio',
+    'Expo',
+    'Zustand',
+    'Redux',
+    'Tailwind',
+    'CSS',
+    'HTML',
+    'JavaScript',
+    'Styled Components',
+    'ChatGPT',
+    'Google Gemini',
+    'Claude',
+    'Blender',
+    'Three.js',
+  ];
+  const group2 = [
+    'PHP',
+    'Symfony',
+    'Node.js',
+    'Python',
+    'Express',
+    'MySQL',
+    'Docker',
+    'AWS',
+    'Google Cloud',
+    'Vercel',
+    'Jest',
+    'Cypress',
+    'Detox',
+    'Storybook',
+    'i18n',
+    'Bitbucket',
+    'Cursor',
+    'Google Antigravity',
+    'Adobe Illustrator',
+    'Inkscape',
+    'Lottie',
+  ];
 
   const repeatedGroup1 = [...group1, ...group1];
   const repeatedGroup2 = [...group2, ...group2];
@@ -156,21 +236,23 @@ const Home = () => {
           <Greeting>こんにちは、ディーンです！</Greeting>
           <MainHeading>Hi, I'm Dean!</MainHeading>
           <SubText>
-            ...and I am an app and frontend web developer! I hope you enjoy having a look through my projects and finding out a little more about who I am.
+            ...and I am a full-stack app and web developer! I hope you enjoy
+            having a look through my projects and finding out a little more
+            about who I am.
             <br />
             よろしくお願いします！
           </SubText>
         </TextContent>
         <ImageWrapper>
-          <ProfileImage src={shikoku} alt="Dean in Shirotori, Shikoku" />
+          <ProfileImage src={shikoku} alt='Dean in Shirotori, Shikoku' />
         </ImageWrapper>
       </ContentWrapper>
       <AnimationSection>
-        <ScrollTrack $direction="forward">
+        <ScrollTrack $direction='forward'>
           <StyledTechStack technologies={repeatedGroup1} noWrap large />
           <StyledTechStack technologies={repeatedGroup1} noWrap large />
         </ScrollTrack>
-        <ScrollTrack $direction="backward">
+        <ScrollTrack $direction='backward'>
           <StyledTechStack technologies={repeatedGroup2} noWrap large />
           <StyledTechStack technologies={repeatedGroup2} noWrap large />
         </ScrollTrack>

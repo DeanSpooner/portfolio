@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { theme } from "../theme";
-import prague from "../assets/images/prague.png";
-import kanagawa from "../assets/images/kanagawa.png";
-import nara from "../assets/images/nara.png";
+import styled from 'styled-components';
+import { theme } from '../theme';
+import prague from '../assets/images/prague.png';
+import kanagawa from '../assets/images/kanagawa.png';
+import nara from '../assets/images/nara.png';
 
 const Section = styled.section`
   padding: ${theme.spacing.lg} ${theme.spacing.lg} ${theme.spacing.xl};
@@ -25,7 +25,7 @@ const Title = styled.h1`
   width: 100%;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -49,7 +49,7 @@ const ContentGrid = styled.div`
 
 const ImagesContainer = styled.div`
   display: flex;
-  
+
   @media (max-width: 768px) {
     max-width: 400px;
     margin: 0 auto;
@@ -75,7 +75,6 @@ const StyledImage = styled.img`
   transition: ${theme.transitions.default};
   opacity: 0.9;
 
-
   &:hover {
     opacity: 1;
     transform: scale(1.02);
@@ -95,23 +94,36 @@ const About = () => {
       <ContentGrid>
         <ImagesContainer>
           <ImageColumn>
-            <StyledImage src={prague} alt="Dean in Prague" />
-            <StyledImage src={kanagawa} alt="Dean in Kanagawa" />
+            <StyledImage src={prague} alt='Dean in Prague' />
+            <StyledImage src={kanagawa} alt='Dean in Kanagawa' />
           </ImageColumn>
           <RightColumn>
-            <StyledImage src={nara} alt="Dean in Nara" />
+            <StyledImage src={nara} alt='Dean in Nara' />
           </RightColumn>
         </ImagesContainer>
         <TextContent>
           <p>
-            My name is Dean Spooner and I am an app and frontend web developer. Currently I am the lead app developer at White Rose Education, leading development and maintenance of two educational apps with over 6 million downloads as of February 2026. Previously, I was a mid-level frontend developer at DEPT, a multinational digital agency in Manchester, supporting work on various web projects for large international clients. Prior to this, I trained on a software development bootcamp, while working in my previous career as a primary school teacher.
+            My name is Dean Spooner and I am a full-stack app and web developer.
+            Currently I am the lead app developer at White Rose Education,
+            leading development and maintenance of two educational apps with
+            over 6 million downloads as of February 2026, as well as extensively
+            participating in and supporting backend and frontend web
+            development. Previously, I was a mid-level frontend developer at
+            DEPT, a multinational digital agency in Manchester, supporting work
+            on various web projects for large international clients. Prior to
+            this, I trained on a software development bootcamp, while working in
+            my previous career as a primary school teacher.
           </p>
           <p>
-            Outside of work, I enjoy studying Japanese, travelling around Japan, cooking, reading, and spending time with my friends. I also enjoy learning 3D modelling in Blender and Three.js, and using Python to develop scripts to automate lots of work and tasks in my work and home life. On top of this, I enjoy working on open-source projects, such as working with the Public Transportation Open Data Center of Japan to build open-source Japanese transportation web apps.
+            Outside of work, I enjoy studying Japanese, travelling around Japan,
+            cooking, reading, and spending time with my friends. I also enjoy
+            learning 3D modelling in Blender and Three.js, and using Python to
+            develop scripts to automate lots of work and tasks in my work and
+            home life. On top of this, I enjoy working on open-source projects,
+            such as working with the Public Transportation Open Data Center of
+            Japan to build open-source Japanese transportation web apps.
           </p>
-          <p>
-            よろしくお願いします！ (Pleased to meet you!)
-          </p>
+          <p>よろしくお願いします！ (Pleased to meet you!)</p>
         </TextContent>
       </ContentGrid>
     </Section>

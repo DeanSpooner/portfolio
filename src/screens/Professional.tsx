@@ -1,8 +1,8 @@
-import { useState } from "react";
-import styled from "styled-components";
-import { theme } from "../theme";
-import Chevron from "../assets/chevron.svg";
-import TechStack from "../components/TechStack";
+import { useState } from 'react';
+import styled from 'styled-components';
+import { theme } from '../theme';
+import Chevron from '../assets/chevron.svg';
+import TechStack from '../components/TechStack';
 
 const Section = styled.section`
   padding: ${theme.spacing.lg} ${theme.spacing.lg};
@@ -25,7 +25,7 @@ const Title = styled.h1`
   width: 100%;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -50,7 +50,7 @@ const ExperienceCard = styled.div<{ isOpen: boolean }>`
   margin-bottom: ${theme.spacing.md};
   overflow: hidden;
   transition: all 0.3s ease;
-  border: 1px solid transparent; 
+  border: 1px solid transparent;
 
   ${({ isOpen }) =>
     isOpen &&
@@ -98,7 +98,7 @@ const RoleTitle = styled.h3`
 
 const HeaderDate = styled.span`
   font-size: 0.9rem;
-  color: ${theme.colors.text.primary}; 
+  color: ${theme.colors.text.primary};
   font-style: italic;
   opacity: 0.9;
 `;
@@ -107,17 +107,18 @@ const ChevronIcon = styled.img<{ isOpen: boolean }>`
   width: 24px;
   height: 24px;
   transition: transform 0.3s ease;
-  transform: ${({ isOpen }) => (isOpen ? "rotate(90deg)" : "rotate(0deg)")};
+  transform: ${({ isOpen }) => (isOpen ? 'rotate(90deg)' : 'rotate(0deg)')};
   filter: var(--icon-filter);
   opacity: 1;
 `;
 
 const CardContent = styled.div<{ isOpen: boolean }>`
-  max-height: ${({ isOpen }) => (isOpen ? "2000px" : "0")};
-  opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
+  max-height: ${({ isOpen }) => (isOpen ? '2000px' : '0')};
+  opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
   overflow: hidden;
   transition: all 0.5s ease-in-out;
-  padding: ${({ isOpen }) => (isOpen ? theme.spacing.md : "0 " + theme.spacing.md)};
+  padding: ${({ isOpen }) =>
+    isOpen ? theme.spacing.md : '0 ' + theme.spacing.md};
 `;
 
 const SectionTitle = styled.h4`
@@ -125,7 +126,7 @@ const SectionTitle = styled.h4`
   font-size: 1.1rem;
   margin-bottom: ${theme.spacing.sm};
   margin-top: ${theme.spacing.md};
-  
+
   &:first-of-type {
     margin-top: 0;
   }
@@ -145,7 +146,7 @@ const ListItem = styled.li`
   line-height: 1.6;
 
   &::before {
-    content: "•";
+    content: '•';
     color: ${theme.colors.primary};
     position: absolute;
     left: 0;
@@ -155,7 +156,7 @@ const ListItem = styled.li`
   a {
     color: ${theme.colors.text.accent};
     text-decoration: none;
-    
+
     &:hover {
       text-decoration: underline;
     }
@@ -173,109 +174,289 @@ const Professional = () => {
     <Section>
       <Title>Professional Experience</Title>
       <Description>
-        Below are some of my most recent jobs in software development and teaching.
+        Below are some of my most recent jobs in software development and
+        teaching.
         <br />
         Please click on a card to expand its details:
       </Description>
-      <ExperienceCard isOpen={openCard === "wre"}>
-        <CardHeader onClick={() => toggleCard("wre")}>
+      <ExperienceCard isOpen={openCard === 'wre'}>
+        <CardHeader onClick={() => toggleCard('wre')}>
           <HeaderContent>
-            <RoleTitle>App and Frontend Web Developer - White Rose Education</RoleTitle>
+            <RoleTitle>
+              Full-stack App and Web Developer - White Rose Education
+            </RoleTitle>
             <HeaderDate>November 2022 - Present</HeaderDate>
           </HeaderContent>
-          <ChevronIcon src={Chevron} isOpen={openCard === "wre"} />
+          <ChevronIcon src={Chevron} isOpen={openCard === 'wre'} />
         </CardHeader>
-        <CardContent isOpen={openCard === "wre"}>
+        <CardContent isOpen={openCard === 'wre'}>
           <SectionTitle>Tech Stack</SectionTitle>
-          <TechStack technologies={["TypeScript", "Python", "React", "React Native", "Next", "Expo", "Zustand", "i18n Internationalization", "Jest", "Detox", "Cypress", "Storybook", "Tailwind", "Lottie", "iOS Xcode", "Android Studio", "Bitbucket", "AWS (S3 and CloudFront)",]} />
+          <TechStack
+            technologies={[
+              'TypeScript',
+              'PHP',
+              'Python',
+              'React',
+              'React Native',
+              'Next',
+              'Expo',
+              'Symfony',
+              'Doctrine',
+              'Docker',
+              'Zustand',
+              'i18n Internationalization',
+              'Jest',
+              'Detox',
+              'Cypress',
+              'Storybook',
+              'Tailwind',
+              'Lottie',
+              'iOS Xcode',
+              'Android Studio',
+              'Bitbucket',
+              'AWS',
+            ]}
+          />
           <SectionTitle>Job role and duties</SectionTitle>
           <List>
             <ListItem>
-              Lead developer on <a target='_blank' href='https://whiteroseeducation.com/infinity'>Infinity</a>, a new, large-scale educational app rolled out in schools throughout the United Kingdom in June 2024 - to date, we have achieved over <b>400,000</b> downloads, and over <b>200,000,000</b> questions answered through Infinity. I collaborate with other developers and architects, both app and web-based, as well as business leaders, product owners, educational specialists, UI/UX designers, and external design agencies, to build, enhance and maintain Infinity;
+              Lead developer on{' '}
+              <a target='_blank' href='https://whiteroseeducation.com/infinity'>
+                Infinity
+              </a>
+              , a new, large-scale educational app rolled out in schools
+              throughout the United Kingdom in June 2024 - to date, we have
+              achieved over <b>400,000</b> downloads, and over{' '}
+              <b>200,000,000</b> questions answered through Infinity. I
+              collaborate with other developers and architects, both app and
+              web-based, as well as business leaders, product owners,
+              educational specialists, UI/UX designers, and external design
+              agencies, to build, enhance and maintain Infinity;
             </ListItem>
             <ListItem>
-              As the lead developer, I am responsible for the deployment of the Infinity app through our testing and production release pipelines, via Expo, Apple and Google Play Stores, as well as any and all necessary package and security updates to Expo, React, React Native, Next, and other associated packages;
+              As the lead developer, I am responsible for the deployment of the
+              Infinity app through our testing and production release pipelines,
+              via Expo, Apple and Google Play Stores, as well as any and all
+              necessary package and security updates to Expo, React, React
+              Native, Next, and other associated packages;
             </ListItem>
             <ListItem>
-              Also lead developer on <a target='_blank' href='https://whiteroseeducation.com/1-minute-maths'>1-Minute Maths</a>, a mathematics app for KS1 children, launched in January 2022, with over <b>5,800,000</b> downloads in total so far. Just like with Infinity, I am responsible for the deployment of the Infinity app through our testing and production release pipelines, via Expo, Apple and Google Play Stores, as well as any and all necessary package and security updates to Expo, React, React Native, Next, and other associated packages;
+              Also lead developer on{' '}
+              <a
+                target='_blank'
+                href='https://whiteroseeducation.com/1-minute-maths'
+              >
+                1-Minute Maths
+              </a>
+              , a mathematics app for KS1 children, launched in January 2022,
+              with over <b>5,800,000</b> downloads in total so far. Just like
+              with Infinity, I am responsible for the deployment of the Infinity
+              app through our testing and production release pipelines, via
+              Expo, Apple and Google Play Stores, as well as any and all
+              necessary package and security updates to Expo, React, React
+              Native, Next, and other associated packages;
             </ListItem>
-            <ListItem>Ensuring robust tests are implemented and maintained, using Jest, Detox and Cypress, as well as implementing BitBucket pipelines to ensure high code hygiene and quality;</ListItem>
-            <ListItem>Creating new components to enhance school pupils' understanding and learning of mathematics;</ListItem>
-            <ListItem>Using TypeScript and Zustand to create new mathematical question generators, adhering to strict mathematical boundaries and conditions;</ListItem>
-            <ListItem>Creation of new teacher-based features, such as quiz and class statistics, on the website, using Next, Chart.js, Storybook, Jest and Cypress;</ListItem>
-            <ListItem>Creation of Python scripts to automate repetitive tasks and processes;</ListItem>
-            <ListItem>Performing code reviews on PRs submitted by other developers;</ListItem>
-            <ListItem>Mentoring other developers in their roles and responsibilities, and supporting them in their development work in paired-programming sessions.</ListItem>
-            <ListItem>Participation in and leading meetings, standups, company-wide presentations and technical demonstrations.</ListItem>
+            <ListItem>
+              Ensuring robust tests are implemented and maintained, using Jest,
+              Detox and Cypress, as well as implementing BitBucket pipelines to
+              ensure high code hygiene and quality;
+            </ListItem>
+            <ListItem>
+              Creating new components to enhance school pupils' understanding
+              and learning of mathematics;
+            </ListItem>
+            <ListItem>
+              Using TypeScript and Zustand to create new mathematical question
+              generators, adhering to strict mathematical boundaries and
+              conditions;
+            </ListItem>
+            <ListItem>
+              Developing/connecting backend API endpoints with PHP/Symfony and
+              Doctrine to manage pupil and teacher data;
+            </ListItem>
+            <ListItem>
+              Building full-stack web pages and features with PHP/Symfony and
+              React, utilizing Storybook, Jest, and Cypress for comprehensive
+              testing;
+            </ListItem>
+            <ListItem>
+              Creation of new teacher-based features, such as quiz and class
+              statistics, on the website, using Next, Chart.js, Storybook, Jest
+              and Cypress;
+            </ListItem>
+            <ListItem>
+              Creation of Python scripts to automate repetitive tasks and
+              processes;
+            </ListItem>
+            <ListItem>
+              Performing code reviews on PRs submitted by other developers;
+            </ListItem>
+            <ListItem>
+              Mentoring other developers in their roles and responsibilities,
+              and supporting them in their development work in
+              paired-programming sessions.
+            </ListItem>
+            <ListItem>
+              Participation in and leading meetings, discoveries, standups,
+              company-wide presentations and technical demonstrations.
+            </ListItem>
           </List>
         </CardContent>
       </ExperienceCard>
-      <ExperienceCard isOpen={openCard === "dept"}>
-        <CardHeader onClick={() => toggleCard("dept")}>
+      <ExperienceCard isOpen={openCard === 'dept'}>
+        <CardHeader onClick={() => toggleCard('dept')}>
           <HeaderContent>
             <RoleTitle>Frontend Developer - DEPT UK</RoleTitle>
             <HeaderDate>November 2021 - November 2022</HeaderDate>
           </HeaderContent>
-          <ChevronIcon src={Chevron} isOpen={openCard === "dept"} />
+          <ChevronIcon src={Chevron} isOpen={openCard === 'dept'} />
         </CardHeader>
-        <CardContent isOpen={openCard === "dept"}>
+        <CardContent isOpen={openCard === 'dept'}>
           <SectionTitle>Tech Stack</SectionTitle>
-          <TechStack technologies={["HTML", "CSS", "SCSS/Sass", "Styled Components", "JavaScript/TypeScript", "React", "Next.js", "Jest", "React Testing Library", "Percy", "Headless CMSs (Strapi, Contentful)", "Node.js", "NPM", "Docker", "Bitbucket", "Azure", "Octopus Deployments"]} />
+          <TechStack
+            technologies={[
+              'HTML',
+              'CSS',
+              'SCSS/Sass',
+              'Styled Components',
+              'JavaScript/TypeScript',
+              'React',
+              'Next.js',
+              'Jest',
+              'React Testing Library',
+              'Percy',
+              'Headless CMSs (Strapi, Contentful)',
+              'Node.js',
+              'NPM',
+              'Docker',
+              'Bitbucket',
+              'Azure',
+              'Octopus Deployments',
+            ]}
+          />
           <SectionTitle>Job role and duties</SectionTitle>
           <List>
-            <ListItem>Collaborating with other frontend and backend developers and architects, clients, product owners, UI/UX designers to build and maintain various large websites and web apps for clients;</ListItem>
-            <ListItem>Creating new frontend features, tests and bug-fixes on large projects for clients, using tooling and frameworks such as React, Next.js, TypeScript, Storybook and Jest;</ListItem>
-            <ListItem>Utilising headless CMS systems, such as Strapi, to build up backend API services;</ListItem>
-            <ListItem>Creating builds and deployments on TeamCity, Octopus Deploy and Azure Pipelines for various client projects;</ListItem>
-            <ListItem>Triaging, estimating and investigating tickets on Jira;</ListItem>
-            <ListItem>Providing non-development support and documentation for clients;</ListItem>
-            <ListItem>Performing code reviews on the PRs of other developers;</ListItem>
-            <ListItem>Mentoring new, junior developers in their roles and responsibilities, and supporting them in their development work in paired-programming sessions.</ListItem>
+            <ListItem>
+              Collaborating with other frontend and backend developers and
+              architects, clients, product owners, UI/UX designers to build and
+              maintain various large websites and web apps for clients;
+            </ListItem>
+            <ListItem>
+              Creating new frontend features, tests and bug-fixes on large
+              projects for clients, using tooling and frameworks such as React,
+              Next.js, TypeScript, Storybook and Jest;
+            </ListItem>
+            <ListItem>
+              Utilising headless CMS systems, such as Strapi, to build up
+              backend API services;
+            </ListItem>
+            <ListItem>
+              Creating builds and deployments on TeamCity, Octopus Deploy and
+              Azure Pipelines for various client projects;
+            </ListItem>
+            <ListItem>
+              Triaging, estimating and investigating tickets on Jira;
+            </ListItem>
+            <ListItem>
+              Providing non-development support and documentation for clients;
+            </ListItem>
+            <ListItem>
+              Performing code reviews on the PRs of other developers;
+            </ListItem>
+            <ListItem>
+              Mentoring new, junior developers in their roles and
+              responsibilities, and supporting them in their development work in
+              paired-programming sessions.
+            </ListItem>
           </List>
         </CardContent>
       </ExperienceCard>
-      <ExperienceCard isOpen={openCard === "tm"}>
-        <CardHeader onClick={() => toggleCard("tm")}>
+      <ExperienceCard isOpen={openCard === 'tm'}>
+        <CardHeader onClick={() => toggleCard('tm')}>
           <HeaderContent>
             <RoleTitle>Foundation Software Developer - Thinkmoney</RoleTitle>
             <HeaderDate>September 2021 - November 2021</HeaderDate>
           </HeaderContent>
-          <ChevronIcon src={Chevron} isOpen={openCard === "tm"} />
+          <ChevronIcon src={Chevron} isOpen={openCard === 'tm'} />
         </CardHeader>
-        <CardContent isOpen={openCard === "tm"}>
+        <CardContent isOpen={openCard === 'tm'}>
           <SectionTitle>Tech Stack</SectionTitle>
-          <TechStack technologies={["HTML", "CSS", "SCSS/Sass", "JavaScript", "A/B Testing", "OutSystems"]} />
+          <TechStack
+            technologies={[
+              'HTML',
+              'CSS',
+              'SCSS/Sass',
+              'JavaScript',
+              'A/B Testing',
+              'OutSystems',
+            ]}
+          />
           <SectionTitle>Job role and duties</SectionTitle>
           <List>
-            <ListItem>Collaborating with other software developers and architects, product owners, UI/UX designers to maintain services on the Thinkmoney website and app;</ListItem>
-            <ListItem>Studied and used OutSystems to build new app and website features, as well as maintain and refactor exists features;</ListItem>
-            <ListItem>Implemented A/B testing to test new variations of components, to track improved user engagement and interactions;</ListItem>
-            <ListItem>Worked in an Agile environment with many business stakeholders to ensure swift, timely releases were met.</ListItem>
+            <ListItem>
+              Collaborating with other software developers and architects,
+              product owners, UI/UX designers to maintain services on the
+              Thinkmoney website and app;
+            </ListItem>
+            <ListItem>
+              Studied and used OutSystems to build new app and website features,
+              as well as maintain and refactor exists features;
+            </ListItem>
+            <ListItem>
+              Implemented A/B testing to test new variations of components, to
+              track improved user engagement and interactions;
+            </ListItem>
+            <ListItem>
+              Worked in an Agile environment with many business stakeholders to
+              ensure swift, timely releases were met.
+            </ListItem>
           </List>
         </CardContent>
       </ExperienceCard>
 
-      <ExperienceCard isOpen={openCard === "teaching"}>
-        <CardHeader onClick={() => toggleCard("teaching")}>
+      <ExperienceCard isOpen={openCard === 'teaching'}>
+        <CardHeader onClick={() => toggleCard('teaching')}>
           <HeaderContent>
             <RoleTitle>Various Teaching Positions - UK</RoleTitle>
             <HeaderDate>September 2013 - August 2021</HeaderDate>
           </HeaderContent>
-          <ChevronIcon src={Chevron} isOpen={openCard === "teaching"} />
+          <ChevronIcon src={Chevron} isOpen={openCard === 'teaching'} />
         </CardHeader>
-        <CardContent isOpen={openCard === "teaching"}>
+        <CardContent isOpen={openCard === 'teaching'}>
           <SectionTitle>Job role and duties</SectionTitle>
           <List>
-            <ListItem>Taught in various primary schools across Manchester and Newcastle-upon-Tyne, UK, across all year groups;</ListItem>
-            <ListItem>Responsible for the planning, teaching and assessment of the entire curriculum and all subjects for my classes;</ListItem>
-            <ListItem>Collaborated with other teachers and school professionals to ensure educational provision was always to a high-standard, with the needs of pupils and parents always met;</ListItem>
-            <ListItem>Communicated regularly with school stakeholders, governors, parents, external pedagogical and healthcare professionals on a wide variety of topics and issues;</ListItem>
-            <ListItem>Assessed classes for a variety of national assessments for various year gruops, such as Phonics testing in Year 1, Key Stage 1 SATs in Year 2, and Key Stage 2 SATs in Year 6;</ListItem>
-            <ListItem>Both participated in and delivered training on a wide variety of teaching topics, such as mathematical training and safeguarding training, to ensure the training and awareness of safeguarding of myself and my colleagues were always up-to-date.</ListItem>
+            <ListItem>
+              Taught in various primary schools across Manchester and
+              Newcastle-upon-Tyne, UK, across all year groups;
+            </ListItem>
+            <ListItem>
+              Responsible for the planning, teaching and assessment of the
+              entire curriculum and all subjects for my classes;
+            </ListItem>
+            <ListItem>
+              Collaborated with other teachers and school professionals to
+              ensure educational provision was always to a high-standard, with
+              the needs of pupils and parents always met;
+            </ListItem>
+            <ListItem>
+              Communicated regularly with school stakeholders, governors,
+              parents, external pedagogical and healthcare professionals on a
+              wide variety of topics and issues;
+            </ListItem>
+            <ListItem>
+              Assessed classes for a variety of national assessments for various
+              year gruops, such as Phonics testing in Year 1, Key Stage 1 SATs
+              in Year 2, and Key Stage 2 SATs in Year 6;
+            </ListItem>
+            <ListItem>
+              Both participated in and delivered training on a wide variety of
+              teaching topics, such as mathematical training and safeguarding
+              training, to ensure the training and awareness of safeguarding of
+              myself and my colleagues were always up-to-date.
+            </ListItem>
           </List>
         </CardContent>
       </ExperienceCard>
-
     </Section>
   );
 };
